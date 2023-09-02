@@ -12,6 +12,9 @@
     --bgPanelItems: #d9d9d9 ;
     --bgLiHover: #424242 ;
     --whiteColor: #fff;
+    --filterInputColor: #45696b ;
+    --filterColor: #324849 ;
+    --iconBoxcolor: #333 ;
 }
 
 *{
@@ -94,7 +97,7 @@ padding: 15px 15px 15px 10px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background: #333333;
+    background: var(--iconBoxcolor);
     color: var(--whiteColor);
 }
 
@@ -142,7 +145,7 @@ height: 54px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-background: #324849;
+background: var(--filterColor);
 padding: 5px;
 position: sticky;
 overflow: hidden;
@@ -246,7 +249,7 @@ z-index: 999;
     position: absolute;
     right: 8px;
     top: 12px;
-    color: #333;
+    color: var(--iconBoxcolor);
 }
 
 .icon-box2 {
@@ -259,7 +262,7 @@ z-index: 999;
     position: absolute;
     right: 38px;
     top: 8px;
-    color: #333;
+    color: var(--iconBoxcolor);
 }
 
 
@@ -432,7 +435,7 @@ align-items: center;
 
 #filters .filter-menu {
     border-radius: 3px;
-    background: #324849;
+    background: var(--filterColor);
     color: var(--whiteColor);
     text-align: center;
     font-family: vazir;
@@ -445,7 +448,7 @@ align-items: center;
 
 #filters .filter-menu:hover{
     cursor: pointer;
-    background: #45696b;
+    background: var(--filterInputColor);
 }
 
 #filters .filter-menu .filter-item{
@@ -462,7 +465,7 @@ align-items: center;
 }
 
 #filters input[type=submit] {
-    background: #324849;
+    background: var(--filterColor);
     color: var(--whiteColor);
     border-radius: 3px;
     font-size: 14px;
@@ -475,7 +478,7 @@ align-items: center;
 
 #filters input[type=submit]:hover{
 cursor: pointer;
-background: #45696b;
+background: var(--filterInputColor);
 }
 
 /* Charts Styles */
