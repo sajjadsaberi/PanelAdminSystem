@@ -2,9 +2,9 @@
     font-family: vazir;
     src: url("../font/Vazir.eot") format("eot");
     src: 
-    url("../font/Vazir.woff") format("woff"),
-    url("../font/Vazir.woff2") format("woff2"),
-    url("../font/Vazir.ttf") format("ttf");
+    url("../font/IRANYekanX-Regular.woff") format("woff"),
+    url("../font/IRANYekanX-Regular.woff2") format("woff2"),
+    url("../font/IRANYekanX-Regular.ttf") format("ttf");
 }
 
 :root {
