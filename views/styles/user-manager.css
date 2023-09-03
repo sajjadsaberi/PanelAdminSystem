@@ -62,7 +62,8 @@
 }
 
 #add-user-form table td input:focus {
-    box-shadow: inset 5px 5px 7px var(--boxShadowColor);
+    box-shadow: 0px 0px 5px var(--boxShadowColor);
+    border-bottom: 3px solid #818181;
 }
 
 #add-user-form table td label {

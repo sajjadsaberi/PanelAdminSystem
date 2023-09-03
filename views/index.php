@@ -292,6 +292,7 @@ error_reporting(0);
         <td>
             <label for="birth">تاریخ پذیرش : </label>
         </td>
+        <td><input type="date" name="date" id="date" placeholder="روز/ماه/سال" /> </td>
         <td><input type="text" name="day" id="day" placeholder="روز"></td>
         <td><input type="text" name="month" id="month" placeholder="ماه"></td>
         <td><input type="text" name="year" id="year" placeholder="سال"></td>
@@ -300,6 +301,7 @@ error_reporting(0);
         <td>
             <label for="birth">تاریخ ترخیص : </label>
         </td>
+        <td><input type="date" name="date" id="date" placeholder="روز/ماه/سال" /> </td>
         <td><input type="text" name="day" id="day" placeholder="روز"></td>
         <td><input type="text" name="month" id="month" placeholder="ماه"></td>
         <td><input type="text" name="year" id="year" placeholder="سال"></td>
@@ -308,6 +310,7 @@ error_reporting(0);
         <td>
             <label for="birth">تاریخ پذیرش قبلی : </label>
         </td>
+        <td><input type="date" name="date" id="date" placeholder="روز/ماه/سال" /> </td>
         <td><input type="text" name="day" id="day" placeholder="روز"></td>
         <td><input type="text" name="month" id="month" placeholder="ماه"></td>
         <td><input type="text" name="year" id="year" placeholder="سال"></td>
