@@ -231,18 +231,96 @@ error_reporting(0);
 
     <form action="" id="add-user-form">
 
-<input type="text" id="name" placeholder="نام و نام خانوادگی">
-<input type="text" id="fathername" placeholder="نام پدر"><br>
-<input type="number" id="codemeli" placeholder="کد ملی">
-<input type="text" id="shsh" placeholder="شماره شناسنامه"><br>
-<label for="birth"> تاریخ تولد : </label><input type="text" id="birth" placeholder="روز" class="dateinput"> / <input type="text" placeholder="ماه" class="dateinput"> / <input type="text" placeholder="سال" class="dateinput"><br>
-<label for="logdate"> تاریخ ورود : </label><input type="text" id="birth" placeholder="روز" class="dateinput"> / <input type="text" placeholder="ماه" class="dateinput"> / <input type="text" placeholder="سال" class="dateinput"><br>
-<input type="text" id="logway" placeholder="نحوه ورود">
-<input type="text" id="logtime" placeholder="مدت حضور"><br>
-<input type="text" id="loginfo" placeholder="علت حضور">
-<input type="text" id="price" placeholder="مبلغ پرداختی"><br>
-<label for="outdate">تاریخ ترخیص : </label><input type="text" id="birth" placeholder="روز" class="dateinput"> / <input type="text" placeholder="ماه" class="dateinput"> / <input type="text" placeholder="سال" class="dateinput"><br>
-<input type="submit" value="افزودن کاربر"><button type="reset">پاک کردن</button>
+<table>
+    <tr>
+        <td><input type="text" placeholder="نام و نام خانوادگی"></td>
+        <td><input type="text" placeholder="نام پدر"></td>
+    </tr>
+    <tr>
+        <td>
+<input type="number" placeholder="کد ملی">
+        </td>
+        <td>
+        <select name="" id="gender">
+            <option value="null" disabled selected>جنسیت</option>
+            <option value="men">مرد</option>
+            <option value="women">زن</option>
+        </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="birth">تاریخ تولد : </label>
+        </td>
+        <td><input type="text" name="day" id="day" placeholder="روز"></td>
+        <td><input type="text" name="month" id="month" placeholder="ماه"></td>
+        <td><input type="text" name="year" id="year" placeholder="سال"></td>
+    </tr>
+    <tr>
+        <td><input type="number" placeholder="شماره شناسنامه"></td>
+        <td><input type="text" placeholder="محل صدور شناسنامه"></td>
+    </tr>
+    <tr>
+        <td>
+            <select name="education" id="education">
+                <option value="null" selected disabled>تحصیلات</option>
+                <option value="zirdiplom">زیر دیپلم</option>
+                <option value="diplom">دیپلم</option>
+                <option value="lisanse">لیسانس</option>
+                <option value="fogh">فوق لیسانس</option>
+            </select>
+        </td>
+        <td>
+            <input type="text" placeholder="شغل">
+        </td>
+    </tr>
+    <tr>
+        <td><input type="text" placeholder="دین"></td>
+        <td><input type="text" placeholder="مذهب"></td>
+    </tr>
+    <tr>
+        <td style="width: 75%;"><input type="text" placeholder="آدرس محل سکونت"></td>
+        <td style="width: 25%;">
+            <select name="taahol" id="taahol" style="width: 82%;">
+                <option value="null" selected disabled>وضعیت تاهل</option>
+                <option value="rell">متاهل</option>
+                <option value="single">مجرد</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="birth">تاریخ پذیرش : </label>
+        </td>
+        <td><input type="text" name="day" id="day" placeholder="روز"></td>
+        <td><input type="text" name="month" id="month" placeholder="ماه"></td>
+        <td><input type="text" name="year" id="year" placeholder="سال"></td>
+    </tr>
+    <tr>
+        <td>
+            <label for="birth">تاریخ ترخیص : </label>
+        </td>
+        <td><input type="text" name="day" id="day" placeholder="روز"></td>
+        <td><input type="text" name="month" id="month" placeholder="ماه"></td>
+        <td><input type="text" name="year" id="year" placeholder="سال"></td>
+    </tr>
+    <tr>
+        <td>
+            <label for="birth">تاریخ پذیرش قبلی : </label>
+        </td>
+        <td><input type="text" name="day" id="day" placeholder="روز"></td>
+        <td><input type="text" name="month" id="month" placeholder="ماه"></td>
+        <td><input type="text" name="year" id="year" placeholder="سال"></td>
+    </tr>
+    <tr>
+        <td><input type="text" placeholder="نام مسـًول پذیرش"></td>
+        <td><input type="text" placeholder="نام تحویل دهنده"></td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="افزودن کاربر"></td>
+        <td><button type="reset">پاک کردن</button></td>
+    </tr>
+</table>
 
     </form>
 

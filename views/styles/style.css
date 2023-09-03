@@ -135,7 +135,7 @@ padding: 15px 15px 15px 10px;
 #content-box {
     margin-right: 20%;
     width: 80%;
-    height: 100%;
+    height: fit-content;
     background: #d3d3d3;
 }
 
@@ -543,7 +543,7 @@ background: #dddddd;
     left: 10px;
     transform: translateY(-50%);
     top: 50%;
-    z-index: 999;
+    z-index: 99;
 }
 
 #widget span {
