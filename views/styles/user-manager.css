@@ -1,10 +1,32 @@
+/* @font-face {
+    font-family: vazir;
+    src: 
+    url("../font/IRANYekanX-Regular.woff") format("woff"),
+    url("../font/IRANYekanX-Regular.woff2") format("woff2"),
+    url("../font/IRANYekanX-Regular.ttf") format("ttf");
+} */
+
+@font-face {
+    font-family: 'IranYekanX';
+    src:
+    url("../font/IRANYekanX-Regular.woff") format("woff"),
+    url("../font/IRANYekanX-Regular.woff2") format("woff2"),
+    url("../font/IRANYekanX-Regular.ttf") format("ttf");
+}
+
 :root {
     --whiteColor: #fff ;
+    --subColor: #324849 ;
+    --subHoverColor: #507274 ;
+    --tableBTN: #a81d13 ;
+    --tableBTNhover: #a83a32 ;
+    --boxShadowColor: #00000054 ;
 }
 
 #add-user-form {
     width: 80%;
     height: 100%;
+    padding-bottom: 40px;
 
 }
 
@@ -22,7 +44,7 @@
 
 #add-user-form table td {
     width: 50%;
-    border: 1px solid #000;
+    border: none;
     display: flex;
     justify-content: space-around;
     padding: 10px 20px;
@@ -30,21 +52,23 @@
 }
 
 #add-user-form table td input {
-    width: 95%;
-    padding: 5px 10px;
+    width: 99%;
+    padding: 7px 13px;
     border-radius: 3px;
     font-size: 16px;
     border: 0;
-    font-weight: bold;
+    font-weight: 200;
     transition: all .2s;
 }
 
 #add-user-form table td input:focus {
-    box-shadow: inset 5px 5px 7px #00000054;
+    box-shadow: inset 5px 5px 7px var(--boxShadowColor);
 }
 
 #add-user-form table td label {
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: 300;
+    padding-top: 7px;
 }
 
 #add-user-form table td select{
@@ -55,31 +79,44 @@
     border-radius: 3px;
     font-size: 16px;
     border: 0;
-    font-weight: bold;
+    font-weight: 200;
     transform: translateY(50%);
     bottom: 50%;
 }
 
+#add-user-form table td select option {
+    font-family: IranYekanX;
+}
+
+
+
+#add-user-form table td [type=submit]{
+    background: var(--subColor);
+    color: var(--whiteColor);
+}
+
 #add-user-form table td [type=submit]:hover{
-    background: #507274;
+    background: var(--subHoverColor);
     cursor: pointer;
 }
 
 #add-user-form table td button {
     position: absolute;
     width: 91%;
-    height: 65%;
-    background: #a81d13;
+    height: 60%;
+    background: var(--tableBTN);
     color: var(--whiteColor);
     padding: 5px 10px;
     border-radius: 3px;
+    border: 0;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: 200;
     transform: translateY(50%);
     bottom: 50%;
+    transition: all .2s;
 }
 
 #add-user-form table td button:hover {
-    background: #a83a32;
+    background: var(--tableBTNhover);
     cursor: pointer;
 }
