@@ -211,17 +211,20 @@ error_reporting(0);
 <div class="activity-box news">
 
 <ul>
-    <li>این یک تست است</li>
-    <li>این یک تست است</li>
-    <li>این یک تست است</li>
-    <li>این یک تست است</li>
-    <li>این یک تست است</li>
-    <li>این یک تست است</li>
-    <li>این یک تست است</li>
-    <li>این یک تست است</li>
-    <li>این یک تست است</li>
-    <li>این یک تست است</li>
-    <li>این یک تست است</li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
 </ul>
 
 

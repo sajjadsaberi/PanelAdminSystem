@@ -1,11 +1,11 @@
 @font-face {
-    font-family: vazir;
+    font-family: IranYekanX;
     src: url("../../font/IRANYekanX-Thin.woff") format("woff");
     src: 
     url("../../font/IRANYekanX-Thin.woff2") format("woff2");
 }
 @font-face {
-    font-family: vazir2;
+    font-family: IranYekanX2;
     src: url("../../font/IRANYekanX-Medium.woff") format("woff");
     src: 
     url("../../font/IRANYekanX-Medium.woff2") format("woff2");
@@ -15,7 +15,7 @@
     padding: 0;
     margin: 0;
     outline: none;
-    font-family: vazir;
+    font-family: IranYekanX;
 }
 
 :root {
@@ -97,7 +97,7 @@ height: 100%;
 padding: 18px;
 border: 0;
 font-size: 14px;
-font-family: vazir;
+font-family: IranYekanX;
 font-weight: 600;
 background: #eeeeee;
 }
@@ -189,7 +189,7 @@ transition: all .2s;
     text-align: center;
     margin-top: 15px;
     font-weight: 300;
-    font-family: vazir2;
+    font-family: IranYekanX2;
 }
 
 #tv p {
@@ -211,7 +211,7 @@ border: none;
 font-size: 12px;
 padding: 10px 20px;
 font-weight: 300;
-font-family: vazir2;
+font-family: IranYekanX2;
 width: 75%;
 height: 45px;
 }
@@ -288,7 +288,7 @@ height: 45px;
     background: var(--whiteColor);
     margin: 10px;
     color: var(--whiteColor);
-    font-family: vazir2;
+    font-family: IranYekanX2;
     transition: all .2s;
 }
 

@@ -23,6 +23,7 @@
     --filterColor: #324849 ;
     --iconBoxcolor: #333 ;
     --ContentBoxColor: #d3d3d3 ;
+    --blackColor: #000 ;
 }
 
 *{
@@ -93,7 +94,7 @@ body {
 #panel-items li a {
 display: block;
 width: 100%;
-color: #000;
+color: var(--blackColor);
 text-decoration: none;
 padding: 15px 15px 10px 10px;
 transition: all .2s;
@@ -417,7 +418,7 @@ overflow: hidden;
     margin: 5px 20px;
     background: linear-gradient(45deg , #2d5be4 , #00ccff);
     border-radius: 10px 0 10px 10px;
-    width: 250px;
+    width: 270px;
     height: fit-content;
     padding: 10px;
     transition: all .2s;
@@ -426,6 +427,13 @@ overflow: hidden;
 
 .news ul li:hover{
     transform: translateX(-10px);
+}
+
+#alert-news {
+  float: left;
+  color: #fff;
+  font-size: 22px;
+  margin-top: -2px;
 }
 
 .tables {
@@ -484,7 +492,7 @@ padding: 15px 12px 15px 12px;
 #filters .filter-menu .filter-item:hover{
     cursor: pointer;
     background: var(--whiteColor);
-    color: #000;
+    color: var(--blackColor);
 }
 
 #filters input[type=submit] {
