@@ -34,7 +34,7 @@ error_reporting(0);
         <a href="../PHP/router/dashboard.php" class="a-in-li"><i class="fa fa-home"></i> داشبورد </a>
     </li>
     <li>
-        <a href="#"><i class="fa fa-message" class="a-in-li"></i> پیام ها </a>
+        <a href="#"><i class="fa fa-message" class="a-in-li"></i>گزارش گیری ها</a>
     </li>
     <li>
         <a href="#"><i class="fa fa-users" class="a-in-li"></i> مدیریت کاربران </a>
@@ -211,6 +211,10 @@ error_reporting(0);
 <div class="activity-box news">
 
 <ul>
+    <li>این یک تست است</li>
+    <li>این یک تست است</li>
+    <li>این یک تست است</li>
+    <li>این یک تست است</li>
     <li>این یک تست است</li>
     <li>این یک تست است</li>
     <li>این یک تست است</li>

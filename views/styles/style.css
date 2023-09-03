@@ -387,8 +387,8 @@ color: #2854da;
 
 .news {
 width: 30%;
-height: 300px;
-border-radius: 5px;
+height: 330px;
+border-radius: 8px;
 box-shadow: 0 0 3px #00000017;
 background: var(--whiteColor);
 position: relative;
@@ -398,8 +398,8 @@ overflow: hidden;
 .news::after {
     content: "آخرین اخبار";
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 12px;
+    right: 20px;
     font-size: 18px;
 }
 
@@ -429,9 +429,9 @@ overflow: hidden;
 }
 
 .tables {
-width: 60%;
+width: 58%;
 height: 300px;
-border-radius: 5px;
+border-radius: 8px;
 background: var(--whiteColor);
 position: relative;
 overflow: hidden;
@@ -439,6 +439,7 @@ display: flex;
 flex-direction: column;
 justify-content: space-around;
 align-items: center;
+padding: 15px 12px 15px 12px;
 }
 
 #filters {
@@ -448,9 +449,9 @@ align-items: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 0;
+    top: 5px;
     left: 0;
-    background: var(--ContentBoxColor);
+    background: transparent;
     overflow: hidden;
 }
 
@@ -465,6 +466,7 @@ align-items: center;
     font-weight: 300;
     font-size: 14px;
     transition: all .2s;
+    margin-right: 12px;
 }
 
 #filters .filter-menu:hover{
@@ -495,6 +497,7 @@ align-items: center;
     padding: 5px 10px;
     border: 0;
     transition: all .2s;
+    margin-left: 12px;
 }
 
 #filters input[type=submit]:hover{
