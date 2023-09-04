@@ -386,6 +386,13 @@ color: #2854da;
     background: var(--ContentBoxColor);
 }
 
+#arrow-news {
+  float: right;
+  margin-top: 16px;
+  margin-right: 18px;
+  color: var(--filterColor);
+}
+
 .news {
 width: 30%;
 height: 330px;
@@ -400,7 +407,7 @@ overflow: hidden;
     content: "آخرین اخبار";
     position: absolute;
     top: 12px;
-    right: 20px;
+    right: 40px;
     font-size: 18px;
 }
 

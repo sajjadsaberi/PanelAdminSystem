@@ -9,7 +9,11 @@ error_reporting(0);
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/user-manager.css">
     <link rel="stylesheet" href="./font-awesome/font-awesome.css">
-
+    <link rel="stylesheet" href="../node_modules/persian-datepicker/dist/css/persian-datepicker.min.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/persian-datepicker/dist/js/persian-datepicker.min.js"></script>
+    <script src="../node_modules/persian-date/dist/persian-date.min.js"></script>
+    <script src="./scripts/app.js"></script>
     <title>Welcome To Panel</title>
 </head>
 <body>
@@ -209,7 +213,7 @@ error_reporting(0);
 
     <!-- News -->
 <div class="activity-box news">
-
+    <span id="arrow-news"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
 <ul>
     <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
     <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
@@ -259,17 +263,25 @@ error_reporting(0);
         <td>
             <label for="birth">تاریخ تولد : </label>
         </td>
-        <td><input type="text" name="day" id="day" placeholder="روز"></td>
-        <td><input type="text" name="month" id="month" placeholder="ماه"></td>
-        <td><input type="text" name="year" id="year" placeholder="سال"></td>
+        <td>
+            <div id="cleander">
+                <input type="text" name="persianDatapicker" id="persianDatapicker">
+            </div>
+        </td>
+        <td>
+            <label for="birth">تاریخ پذیرش : </label>
+        </td>
+        <td>
+            <div id="cleander">
+                <input type="text" value="0000/00/00" name="persianDatapicker" id="persianDatapicker">
+            </div>
+        </td>
     </tr>
     <tr>
         <td><input type="number" placeholder="شماره شناسنامه"></td>
         <td><input type="text" placeholder="محل صدور شناسنامه"></td>
-    </tr>
-    <tr>
         <td>
-            <select name="education" id="education">
+            <select name="education" id="education" style="width: 85%;">
                 <option value="null" selected disabled>تحصیلات</option>
                 <option value="zirdiplom">زیر دیپلم</option>
                 <option value="diplom">دیپلم</option>
@@ -277,13 +289,13 @@ error_reporting(0);
                 <option value="fogh">فوق لیسانس</option>
             </select>
         </td>
-        <td>
-            <input type="text" placeholder="شغل">
-        </td>
     </tr>
     <tr>
         <td><input type="text" placeholder="دین"></td>
         <td><input type="text" placeholder="مذهب"></td>
+        <td>
+            <input type="text" placeholder="شغل">
+        </td>
     </tr>
     <tr>
         <td style="width: 75%;"><input type="text" placeholder="آدرس محل سکونت"></td>
@@ -296,39 +308,33 @@ error_reporting(0);
         </td>
     </tr>
     <tr>
-        <td>
-            <label for="birth">تاریخ پذیرش : </label>
-        </td>
-        <td><input type="date" name="date" id="date" placeholder="روز/ماه/سال" /> </td>
-        <td><input type="text" name="day" id="day" placeholder="روز"></td>
-        <td><input type="text" name="month" id="month" placeholder="ماه"></td>
-        <td><input type="text" name="year" id="year" placeholder="سال"></td>
+    
     </tr>
     <tr>
         <td>
             <label for="birth">تاریخ ترخیص : </label>
         </td>
-        <td><input type="date" name="date" id="date" placeholder="روز/ماه/سال" /> </td>
-        <td><input type="text" name="day" id="day" placeholder="روز"></td>
-        <td><input type="text" name="month" id="month" placeholder="ماه"></td>
-        <td><input type="text" name="year" id="year" placeholder="سال"></td>
-    </tr>
-    <tr>
+        <td>
+            <div id="cleander">
+                <input type="text" value="0000/00/00" name="persianDatapicker" id="persianDatapicker">
+            </div>
+        </td>
         <td>
             <label for="birth">تاریخ پذیرش قبلی : </label>
         </td>
-        <td><input type="date" name="date" id="date" placeholder="روز/ماه/سال" /> </td>
-        <td><input type="text" name="day" id="day" placeholder="روز"></td>
-        <td><input type="text" name="month" id="month" placeholder="ماه"></td>
-        <td><input type="text" name="year" id="year" placeholder="سال"></td>
+        <td>
+            <div id="cleander">
+                <input type="text" value="0000/00/00" name="persianDatapicker" id="persianDatapicker">
+            </div>
+        </td>
     </tr>
     <tr>
         <td><input type="text" placeholder="نام مسـًول پذیرش"></td>
         <td><input type="text" placeholder="نام تحویل دهنده"></td>
     </tr>
     <tr>
-        <td><input type="submit" value="افزودن کاربر"></td>
-        <td><button type="reset">پاک کردن</button></td>
+        <td><input type="submit" value="افزودن مدد جو"></td>
+        <td><button type="reset">پاک کردن فرم</button></td>
     </tr>
 </table>
 
