@@ -1,5 +1,9 @@
 $(document).ready(function () {
-    const datepickerDOM = $("#persianDatapicker");
+
+    
+    const datepickerDOM = $(".persianDatapicker");
+
+
     datepickerDOM.persianDatepicker(
         {
         "inline": false,
@@ -15,7 +19,7 @@ $(document).ready(function () {
         "onlyTimePicker": false,
         "onlySelectOnDate": false,
         "calendarType": "persian",
-        "inputDelay": 700,
+        "inputDelay": 300,
         "observer": false,
         "calendar": {
             "persian": {

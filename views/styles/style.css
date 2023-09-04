@@ -201,6 +201,7 @@ z-index: 999;
 #content-box header .head-items .head-prof{
     position: relative;
     width: 16%;
+    height: 65%;
     border-radius: 50%;
     animation: pull 2s linear infinite;
 }
@@ -377,7 +378,7 @@ color: #2854da;
 }
 
 #activity {
-    width: 100%;
+    width: 96.5%;
     height: 400px;
     margin: -25px 5px;
     display: flex;
@@ -422,7 +423,7 @@ overflow: hidden;
 
 .news ul li {
     list-style: none;
-    margin: 5px 20px;
+    margin: 5px auto;
     background: linear-gradient(45deg , #2d5be4 , #00ccff);
     border-radius: 10px 0 10px 10px;
     width: 270px;
@@ -444,7 +445,7 @@ overflow: hidden;
 }
 
 .tables {
-width: 58%;
+width: 64%;
 height: 300px;
 border-radius: 8px;
 background: var(--whiteColor);
@@ -562,8 +563,16 @@ background: var(--filterInputColor);
 #data-table td{
     border: 1px solid #c5c5c5;
     padding: 10px;
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 12px;
+    text-align: center;
+}
+
+#data-table th{
+    border: 1px solid #c5c5c5;
+    padding: 10px;
+    font-size: 13.5px;
+    font-weight: 200;
+    text-align: center;
 }
 
 #data-table tr:nth-child(odd){
@@ -597,11 +606,10 @@ background: #dddddd;
     display: none;
     width: 100%;
     max-height: max-content;
-    background: var(--bgLiHover);
+    background: #fff;
     transition: all .1s;
 }
 
 #users-manager:hover .sub-menu , #users-manager:hover .sub-menu a {
 display: block;
-transform: translateX(-10%);
 }

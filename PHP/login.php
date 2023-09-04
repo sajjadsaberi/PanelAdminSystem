@@ -13,9 +13,24 @@ if(!empty($_POST["submit"])){
     // Validation Input
     if(!empty($user) && !empty($pass)){
 
+$loweruser = strtolower($user);
 // Username & Password Validate
-        if($user == "amir" && $pass == 1234){
+
+            $manage_query = "
+            select * from manager;
+            ";
+
+            $runner = $mysqli->query($manage_query);
+
+            
+
+            if ($runner->num_rows > 0) {
+
+                for ($i = 0 ; $i <= $runner->num_rows ; $i++) {
+                $assoc = $runner->fetch_assoc();
+        if($loweruser == $assoc["username"] && $pass == $assoc["password"]){
             $_SESSION["permission"] = "dashboard";
+
 
 
 
@@ -31,11 +46,16 @@ if(!empty($_POST["submit"])){
             // echo "</pre>";
 
 
-
             header("Location:../views/index.php");
+
+
+
         }else{
-            echo "Details is not valid";
+            echo "Username Or Password In not Valid !";
+            echo $assoc["username"];
         }
+    }
+            }
 
     }else{
         echo "Input Is Empty";

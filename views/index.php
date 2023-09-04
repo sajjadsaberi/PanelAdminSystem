@@ -1,6 +1,20 @@
 <?php
+
+include_once "../utils/connection.php";
+
 session_start();
 error_reporting(0);
+
+// PHP Code 
+
+$query_add_user = "
+select * from users;
+";
+
+$run_query = $mysqli->query($query_add_user);
+
+
+// End PHP Code
 ?>
 <head>
     <meta charset="UTF-8">
@@ -10,10 +24,7 @@ error_reporting(0);
     <link rel="stylesheet" href="./styles/user-manager.css">
     <link rel="stylesheet" href="./font-awesome/font-awesome.css">
     <link rel="stylesheet" href="../node_modules/persian-datepicker/dist/css/persian-datepicker.min.css">
-    <script src="../node_modules/jquery/dist/jquery.js"></script>
-    <script src="../node_modules/persian-datepicker/dist/js/persian-datepicker.min.js"></script>
-    <script src="../node_modules/persian-date/dist/persian-date.min.js"></script>
-    <script src="./scripts/app.js"></script>
+    <link rel="stylesheet" href="./scripts/DataTables/datatables.min.css" />
     <title>Welcome To Panel</title>
 </head>
 <body>
@@ -47,7 +58,7 @@ error_reporting(0);
         <a href="#users-manager" class="a-in-li"><i class="fa-duotone fa-user"></i> مدیریت مدد جویان </a>
         <div class="sub-menu">
                 <a href="../PHP/router/user-manager/add-user.php"><i class="fa fa-plus"></i> اضافه کردن کاربر </a>
-                <a href="#"><i class="fa fa-search"></i> نمایش همه کاربران </a>
+                <a href="../PHP/router/user-manager/show-all-users.php"><i class="fa fa-search"></i> نمایش همه کاربران </a>
             </div>
     </li>
     <li>
@@ -95,9 +106,8 @@ error_reporting(0);
     </div>
 
     <div id="widget">
-        <span id="time">00:00:00</span>
-        <span id="date">00/00/00</span>
-    </div>
+                <input disabled type="text" name="persianDatapicker" class="persianDatapicker">
+            </div>
 
 </div>
 
@@ -181,29 +191,33 @@ error_reporting(0);
 <table id="data-table">
 
     <tr>
-        <td>ردیف</td>
-        <td>نام و نام خانوادگی</td>
-        <td>نام پدر</td>
-        <td>تاریخ پذیرش</td>
-        <td>نحوه پذیرش</td>
-        <td>تاریخ ترخیص</td>
+        <th>ردیف</th>
+        <th>نام و نام خانوادگی</th>
+        <th>نام پدر</th>
+        <th>تاریخ پذیرش</th>
+        <th>تاریخ ترخیص</th>
+        <th>مسـًول پذیرش</th>
     </tr>
-    <tr>
-        <td>1</td>
-        <td>امیرحسین صادقی</td>
-        <td>ابراهیم</td>
-        <td>1/1/1401</td>
-        <td>خالی</td>
-        <td>1/2/1401</td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>امیرحسین صادقی</td>
-        <td>ابراهیم</td>
-        <td>1/1/1401</td>
-        <td>خالی</td>
-        <td>1/2/1401</td>
-    </tr>
+
+    <?php
+    if ($run_query->num_rows > 0) {
+            for ($i = 0 ; $i <= $run_query->num_rows ; $i++) {
+                $row = $run_query->fetch_assoc();
+                echo "<tr>";
+                echo "<td>" . $row["id"] . "</td>";
+                echo "<td>" . $row["name"] . "</td>";
+                echo "<td>" . $row["fathername"] . "</td>";
+                echo "<td>" . $row["logdate"] . "</td>";
+                echo "<td>" . $row["outdate"] . "</td>";
+                echo "<td>" . $row["adminname"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr>";
+            echo "<td>اطلاعاتی وجود ندارد</td>";
+            echo "</tr>";
+        }
+?>
 </table>
 
 </div>
@@ -215,7 +229,7 @@ error_reporting(0);
 <div class="activity-box news">
     <span id="arrow-news"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
 <ul>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+    <li>این یک تست است<span id="alert-news"><i class="fa fa-bg-light" aria-hidden="true"></i></span></li>
     <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
     <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
     <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
@@ -238,21 +252,21 @@ error_reporting(0);
 
 <?php }if($_SESSION["permission"] == "addUser"){ ?>
 
+            <!-- Add User Form -->
 
-
-    <form action="" id="add-user-form">
+    <form action="../PHP/user-manager/add-user.php" id="add-user-form" method="post">
 
 <table>
     <tr>
-        <td><input type="text" placeholder="نام و نام خانوادگی"></td>
-        <td><input type="text" placeholder="نام پدر"></td>
+        <td><input required name="name" type="text" placeholder="نام و نام خانوادگی"></td>
+        <td><input required name="fathername" type="text" placeholder="نام پدر"></td>
     </tr>
     <tr>
         <td>
-<input type="number" placeholder="کد ملی">
+<input required name="codemeli" type="number" placeholder="کد ملی">
         </td>
         <td>
-        <select name="" id="gender">
+        <select name="gender" id="gender">
             <option value="null" disabled selected>جنسیت</option>
             <option value="men">مرد</option>
             <option value="women">زن</option>
@@ -265,7 +279,7 @@ error_reporting(0);
         </td>
         <td>
             <div id="cleander">
-                <input type="text" name="persianDatapicker" id="persianDatapicker">
+                <input required type="text" name="birthdate" class="persianDatapicker">
             </div>
         </td>
         <td>
@@ -273,13 +287,13 @@ error_reporting(0);
         </td>
         <td>
             <div id="cleander">
-                <input type="text" value="0000/00/00" name="persianDatapicker" id="persianDatapicker">
+                <input required type="text" name="signdate" class="persianDatapicker">
             </div>
         </td>
     </tr>
     <tr>
-        <td><input type="number" placeholder="شماره شناسنامه"></td>
-        <td><input type="text" placeholder="محل صدور شناسنامه"></td>
+        <td><input required type="number" name="shsh" placeholder="شماره شناسنامه"></td>
+        <td><input required type="text" name="loc" placeholder="محل صدور شناسنامه"></td>
         <td>
             <select name="education" id="education" style="width: 85%;">
                 <option value="null" selected disabled>تحصیلات</option>
@@ -291,14 +305,14 @@ error_reporting(0);
         </td>
     </tr>
     <tr>
-        <td><input type="text" placeholder="دین"></td>
-        <td><input type="text" placeholder="مذهب"></td>
+        <td><input name="din" required type="text" placeholder="دین"></td>
+        <td><input name="mazhab" required type="text" placeholder="مذهب"></td>
         <td>
-            <input type="text" placeholder="شغل">
+            <input name="job" required type="text" placeholder="شغل">
         </td>
     </tr>
     <tr>
-        <td style="width: 75%;"><input type="text" placeholder="آدرس محل سکونت"></td>
+        <td style="width: 75%;"><input name="address" required type="text" placeholder="آدرس محل سکونت"></td>
         <td style="width: 25%;">
             <select name="taahol" id="taahol" style="width: 82%;">
                 <option value="null" selected disabled>وضعیت تاهل</option>
@@ -316,7 +330,7 @@ error_reporting(0);
         </td>
         <td>
             <div id="cleander">
-                <input type="text" value="0000/00/00" name="persianDatapicker" id="persianDatapicker">
+                <input type="text" name="outdate" class="persianDatapicker">
             </div>
         </td>
         <td>
@@ -324,16 +338,16 @@ error_reporting(0);
         </td>
         <td>
             <div id="cleander">
-                <input type="text" value="0000/00/00" name="persianDatapicker" id="persianDatapicker">
+                <input type="text" name="dublelog" class="persianDatapicker">
             </div>
         </td>
     </tr>
     <tr>
-        <td><input type="text" placeholder="نام مسـًول پذیرش"></td>
-        <td><input type="text" placeholder="نام تحویل دهنده"></td>
+        <td><input name="adminlog" required type="text" placeholder="نام مسـًول پذیرش"></td>
+        <td><input name="police" required type="text" placeholder="نام تحویل دهنده"></td>
     </tr>
     <tr>
-        <td><input type="submit" value="افزودن مدد جو"></td>
+        <td><input onclick="createrow()" name="submit" type="submit" value="افزودن مدد جو"></td>
         <td><button type="reset">پاک کردن فرم</button></td>
     </tr>
 </table>
@@ -342,9 +356,49 @@ error_reporting(0);
 
 
 
-<?php }else{header("Location:../PHP/router/dashboard.php");} ?>
+<?php }elseif($_SESSION["permission"] == "showallusers"){ ?>
 
 
+    <table id="myTable" class="display">
+    <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+        </tr>
+        <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+        </tr>
+    </tbody>
+</table>
+
+<table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1 Data 1</td>
+            <td>Row 1 Data 2</td>
+        </tr>
+        <tr>
+            <td>Row 2 Data 1</td>
+            <td>Row 2 Data 2</td>
+        </tr>
+    </tbody>
+</table>
+
+
+    <?php }else{header("Location:../PHP/router/dashboard.php");} ?>
     </div>
 
 
@@ -359,5 +413,11 @@ error_reporting(0);
 <script src="./scripts/charts.js"></script>
 <script src="./font-awesome/all.js"></script>
 <script src="./scripts/script.js"></script>
+<script src="../node_modules/jquery/dist/jquery.js"></script>
+<script src="../node_modules/persian-datepicker/dist/js/persian-datepicker.min.js"></script>
+<script src="../node_modules/persian-date/dist/persian-date.min.js"></script>
+<script src="./scripts/app.js"></script>
+<script src="./scripts/table.js"></script>
+<script src="./scripts/DataTables/datatables.min.js"></script>
 <!-- <script src="./scripts/bootstrap/bootstrap.min.js.map"></script> -->
 </html>
