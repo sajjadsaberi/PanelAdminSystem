@@ -229,20 +229,21 @@ $run_query = $mysqli->query($query_add_user);
 <div class="activity-box news">
     <span id="arrow-news"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
 <ul>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-bg-light" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
-    <li>این یک تست است<span id="alert-news"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></span></li>
+<?php
+    if ($run_query->num_rows > 0) {
+            for ($i = 0 ; $i < $run_query->num_rows ; $i++) {
+                $row = $run_query->fetch_assoc();
+                    echo "<li>";
+                    echo $row["name"];
+                    echo "hello";
+                    echo "</li>";
+            }
+        } else {
+            echo "<tr>";
+            echo "<td>اطلاعاتی وجود ندارد</td>";
+            echo "</tr>";
+        }
+?>
 </ul>
 
 
@@ -359,43 +360,16 @@ $run_query = $mysqli->query($query_add_user);
 <?php }elseif($_SESSION["permission"] == "showallusers"){ ?>
 
 
-    <table id="myTable" class="display">
-    <thead>
-        <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Row 1 Data 1</td>
-            <td>Row 1 Data 2</td>
-        </tr>
-        <tr>
-            <td>Row 2 Data 1</td>
-            <td>Row 2 Data 2</td>
-        </tr>
-    </tbody>
-</table>
+    <!-- Search Box -->
 
-<table id="table_id" class="display">
-    <thead>
-        <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Row 1 Data 1</td>
-            <td>Row 1 Data 2</td>
-        </tr>
-        <tr>
-            <td>Row 2 Data 1</td>
-            <td>Row 2 Data 2</td>
-        </tr>
-    </tbody>
-</table>
+<div class="searchBox">
+
+    <input class="searchInput"type="text" placeholder="جستجو">
+    <button class="searchButton" href="#">
+        <i class="material-icons fa fa-search">
+        </i>
+    </button>
+</div>
 
 
     <?php }else{header("Location:../PHP/router/dashboard.php");} ?>

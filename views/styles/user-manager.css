@@ -151,3 +151,75 @@ input[type="number"]::-webkit-inner-spin-button {
     font-weight: 300;
     color: #000;
 }
+
+.searchBox {
+    background: #595959;
+    height: 55px;
+    border-radius: 55px;
+    padding: 2px;
+    margin-right: 40px;
+}
+
+.searchBox:hover > .searchInput {
+    width: 90%;
+    padding: 0 6px;
+    padding-top: 8px;
+}
+
+.searchBox:hover > .searchButton {
+  background: white;
+  color : #2f3640;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    border: 0;
+    box-shadow: 0 0 5px #000;
+}
+
+.searchButton:active{
+    box-shadow: inset 0 0 5px #000;
+}
+
+.searchButton:hover{
+    cursor: pointer;
+}
+
+.searchButton svg {
+    font-size: 25px;
+}
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: white;
+    font-size: 25px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+    font-family: vazir;
+    padding-top: 8px;
+}
+
+.searchInput::placeholder {
+    color: #fff;
+}
+
+@media screen and (max-width: 620px) {
+.searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+}
+}
