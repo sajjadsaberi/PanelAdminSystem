@@ -140,6 +140,21 @@ padding: 15px 15px 15px 10px;
     align-items: center;
 }
 
+.online svg {
+    width: 10px;
+    height: 10px;
+    color: #02a802;
+    margin: 10px 16px 0px 0px;
+    position: absolute;
+}
+
+.online::after {
+    content: "آنلاین";
+    position: absolute;
+    font-size: 12px;
+    margin: 8px 32px 0px 0px;
+}
+
 .profile img {
     width: 20%;
     border-radius: 8px;
@@ -150,7 +165,7 @@ padding: 15px 15px 15px 10px;
 .profile span {
     width: 60%;
     font-size: 15px;
-    margin: 10px;
+    margin: -10px 10px 10px 10px ;
 }
 
 /* Content */

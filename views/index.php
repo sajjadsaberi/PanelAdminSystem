@@ -42,6 +42,7 @@ $run_query = $mysqli->query($query_add_user);
     </li>
     <li class="profile">
         <img src="./images/prof.jpg" alt="Profile">
+        <div class="online"><i class="fa fa-circle" aria-hidden="true"></i></div>
         <span>مدیریت کل - دکتر صابری</span>
     </li>
     <li>
