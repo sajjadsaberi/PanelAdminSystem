@@ -119,30 +119,30 @@ $run_query = $mysqli->query($query_add_user);
 
 <section id="info">
 
-    <div class="info-box box-users">
+    <div class="info-box box-users" style="background-color: #2d5be4;">
     <div class="info">
         <span class="about">تعداد مدد جویان</span>
         <span class="number">253</span>
     </div>
     <div class="icon"><i class="fa fa-users"></i></div>
     </div>
-    <div class="info-box box-coin">
+    <div class="info-box box-coin" style="background-color: #f39c12;">
     <div class="info">
-        <span class="about">هزینه ی دوره</span>
+        <span class="about">هزینه های دریافتی</span>
         <span class="number">321</span>
     </div>
     <div class="icon"><i class="fa fa-coin"></i></div>
     </div>
-    <div class="info-box box-sign">
+    <div class="info-box box-sign" style="background-color: #00a65a;color: #FFF;">
     <div class="info">
-        <span class="about">تعداد ثبت نام ها</span>
+        <span class="about">تعداد ترخیص شده ها</span>
         <span class="number">1864</span>
     </div>
     <div class="icon"><i class="fa fa-sign-in"></i></div>
     </div>
-    <div class="info-box box-user">
+    <div class="info-box box-user" style="background-color: #ff4949;">
     <div class="info">
-        <span class="about">تعداد پرسنل</span>
+        <span class="about">تعداد کارکنان</span>
         <span class="number">154</span>
     </div>
     <div class="icon"><i class="fa fa-user"></i></div>
