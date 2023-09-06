@@ -25,7 +25,7 @@ $run_query = $mysqli->query($query_add_user);
     <link rel="stylesheet" href="./font-awesome/font-awesome.css">
     <link rel="stylesheet" href="../node_modules/persian-datepicker/dist/css/persian-datepicker.min.css">
     <link rel="stylesheet" href="./scripts/DataTables/datatables.min.css" />
-    <title>Welcome To Panel</title>
+    <title>سامانه اتوماسیون سرای مهر بم</title>
 </head>
 <body>
     
@@ -42,14 +42,11 @@ $run_query = $mysqli->query($query_add_user);
     </li>
     <li class="profile">
         <img src="./images/prof.jpg" alt="Profile">
-        <span>امیرحسین صادقی</span>
+        <span>مدیریت کل - دکتر صابری</span>
     </li>
     <li>
         
         <a href="../PHP/router/dashboard.php" class="a-in-li"><i class="fa fa-home"></i> داشبورد </a>
-    </li>
-    <li>
-        <a href="#"><i class="fa fa-message" class="a-in-li"></i>گزارش گیری ها</a>
     </li>
     <li>
         <a href="#"><i class="fa fa-users" class="a-in-li"></i> مدیریت کاربران </a>
@@ -60,6 +57,9 @@ $run_query = $mysqli->query($query_add_user);
                 <a href="../PHP/router/user-manager/add-user.php"><i class="fa fa-plus"></i> اضافه کردن کاربر </a>
                 <a href="../PHP/router/user-manager/show-all-users.php"><i class="fa fa-search"></i> نمایش همه کاربران </a>
             </div>
+    </li>
+    <li>
+        <a href="#"><i class="fa fa-message" class="a-in-li"></i>گزارش گیری ها</a>
     </li>
     <li>
         <a href="#"><i class="fa fa-cog"></i>تنظیمات قالب</a>
