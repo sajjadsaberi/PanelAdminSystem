@@ -63,7 +63,7 @@ $run_query = $mysqli->query($query_add_user);
         <a href="#"><i class="fa fa-message" class="a-in-li"></i>گزارش گیری ها</a>
     </li>
     <li>
-        <a href="#"><i class="fa fa-cog"></i>تنظیمات قالب</a>
+        <a href="#"><i class="fa fa-cogs"></i>تنظیمات قالب</a>
     </li>
     <li>
         <a href="../PHP/router/exit.php"><i class="fa fa-sign-out"></i> خروج از حساب </a>
@@ -81,6 +81,9 @@ $run_query = $mysqli->query($query_add_user);
 <header>
         <section class="head-menu">
             <i class="fa fa-bars" onclick="menubtn()"></i>
+        </section>
+        <section class="head-text">
+        <div id="randomText" onload="displayRandomText()"></div>
         </section>
         <section class="head-items">
             <a href="#"><i class="fa fa-arrow-right"></i></a>
@@ -236,7 +239,7 @@ $run_query = $mysqli->query($query_add_user);
                 $row = $run_query->fetch_assoc();
                     echo "<li>";
                     echo $row["name"];
-                    echo "hello";
+                    echo "داده ای برای نمایش وجود ندارد";
                     echo "</li>";
             }
         } else {

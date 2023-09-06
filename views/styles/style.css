@@ -275,6 +275,12 @@ z-index: 999;
     cursor: pointer;
 }
 
+#randomText {
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 .title-box {
     background-color: #e3e3e3;
     width: 95%;
@@ -587,17 +593,16 @@ background: var(--filterInputColor);
 
 
 #data-table td{
-    border: .5px solid var(--tdTableColor);
+    border: 1px solid var(--tdTableColor);
     padding: 10px;
     font-size: 11px;
     text-align: center;
-    border: 0;
     transition: all .2s;
 }
 
 #data-table td:hover {
     cursor: pointer;
-    box-shadow: inset 3px 3px 3px #bebebe86;
+    box-shadow: inset 0px 0px 10px #92929286;
 }
 
 #data-table th{
@@ -606,7 +611,7 @@ background: var(--filterInputColor);
     font-size: 11.5px;
     font-weight: 200;
     text-align: center;
-    border: 0;
+    border: 1px solid var(--tdTableColor);
 }
 
 #data-table tr:nth-child(odd){

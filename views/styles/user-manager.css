@@ -104,6 +104,7 @@ input[type="number"]::-webkit-inner-spin-button {
     background: var(--subColor);
     color: var(--whiteColor);
     border: 0;
+    height: 45px;
 }
 
 #add-user-form table td [type=submit]:hover{
@@ -118,7 +119,7 @@ input[type="number"]::-webkit-inner-spin-button {
 #add-user-form table td button {
     position: absolute;
     width: 91%;
-    height: 60%;
+    height: 70%;
     background: var(--tableBTN);
     color: var(--whiteColor);
     padding: 5px 10px;
