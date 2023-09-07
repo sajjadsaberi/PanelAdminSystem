@@ -21,6 +21,27 @@ function createrow() {
     alert("کاربر افزوده شد")
 }
 
+
+//add counter number 
+
+let skillPrecent = document.querySelectorAll(".number");
+
+let numberSkill = Array.from(skillPrecent);
+
+numberSkill.map(item => {
+  let finalMount = item.getAttribute("data-val");
+  let counter = 0;
+  setInterval(() => {
+    if (finalMount == counter - 1) {
+      clearInterval();
+    } else {
+      item.textContent = counter;
+      counter = counter + 1;
+    }
+  }, 20)
+});
+
+
 // add random text in header
 
 const texts = [
@@ -49,3 +70,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 displayRandomText();
+

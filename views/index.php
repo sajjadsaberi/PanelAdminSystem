@@ -126,7 +126,7 @@ $run_query = $mysqli->query($query_add_user);
     <div class="info-box box-users" style="background-color: #2d5be4;">
     <div class="info">
         <span class="about">تعداد مدد جویان</span>
-        <span class="number">253</span>
+        <span class="number" data-val="100">2535</span>
     </div>
     <div class="icon"><i class="fa fa-users"></i></div>
     </div>
