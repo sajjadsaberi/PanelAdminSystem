@@ -38,7 +38,7 @@ $run_query = $mysqli->query($query_add_user);
     <ul id="panel-items">
     <li class="logo">
         
-        <span>سامانه مدیریت</span>
+        <span>مرکز بازپروری سرای مهر</span>
     </li>
     <li class="profile">
         <img src="./images/prof.jpg" alt="Profile">
