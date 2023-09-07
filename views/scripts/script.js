@@ -24,24 +24,44 @@ function createrow() {
 
 //add counter number 
 
-let skillPrecent = document.querySelectorAll(".number");
+// let skillPrecent = document.querySelectorAll(".number");
 
-let numberSkill = Array.from(skillPrecent);
+// let numberSkill = Array.from(skillPrecent);
 
-numberSkill.map(item => {
-  let finalMount = item.getAttribute("data-val");
-  let counter = 0;
-  setInterval(() => {
-    if (finalMount == counter - 1) {
-      clearInterval();
-    } else {
-      item.textContent = counter;
-      counter = counter + 1;
+// numberSkill.map(item => {
+//   let finalMount = item.getAttribute("data-val");
+//   let counter = 0;
+//   setInterval(() => {
+//     if (finalMount == counter - 1) {
+//       clearInterval();
+//     } else {
+//       item.textContent = counter;
+//       counter = counter + 1;
+//     }
+//   }, 20)
+// });
+    // تابعی برای افزایش شمارنده
+    function startCount(element) {
+        var target = parseInt(element.getAttribute('data-count'));
+        var current = 0;
+        var increment = 1; // می‌توانید مقدار افزایش را تغییر دهید
+
+        var interval = setInterval(function () {
+            current += increment;
+            element.textContent = current;
+
+            if (current >= target) {
+                clearInterval(interval);
+                element.textContent = target; // مطمئن شوید که مقدار نهایی برابر با هدف باشد
+            }
+        }, 0.001); // زمان انتظار بین افزایش‌ها (به میلی‌ثانیه)
     }
-  }, 20)
-});
 
-
+    // اجرای تابع برای هر یک از عناصر با کلاس number
+    var numberElements = document.querySelectorAll('.number');
+    numberElements.forEach(function (element) {
+        startCount(element);
+    });
 // add random text in header
 
 const texts = [
