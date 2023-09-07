@@ -662,7 +662,7 @@ footer {
   background-color: var(--filterColor);
   padding-top: 15px;
   padding-bottom: 15px;
-  color: #fff;
+  color: var(--whiteColor);
   margin-top: 40px;
 }
 
