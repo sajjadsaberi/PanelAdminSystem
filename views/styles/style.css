@@ -108,7 +108,7 @@ padding: 15px 15px 15px 10px;
 }
 
 #panel-items li a svg{
-    color: #417274;
+    color: var(--filterInputColor);
     margin-left: 10px;
 }
 
@@ -610,7 +610,7 @@ background: var(--filterInputColor);
     border: .5px solid var(--tdTableColor);
     padding: 10px;
     font-size: 11.5px;
-    font-weight: 200;
+    font-weight: 800s;
     text-align: center;
     border: 1px solid var(--tdTableColor);
 }

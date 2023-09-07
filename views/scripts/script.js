@@ -21,30 +21,11 @@ function createrow() {
     alert("کاربر افزوده شد")
 }
 
-
-//add counter number 
-
-// let skillPrecent = document.querySelectorAll(".number");
-
-// let numberSkill = Array.from(skillPrecent);
-
-// numberSkill.map(item => {
-//   let finalMount = item.getAttribute("data-val");
-//   let counter = 0;
-//   setInterval(() => {
-//     if (finalMount == counter - 1) {
-//       clearInterval();
-//     } else {
-//       item.textContent = counter;
-//       counter = counter + 1;
-//     }
-//   }, 20)
-// });
     // تابعی برای افزایش شمارنده
     function startCount(element) {
         var target = parseInt(element.getAttribute('data-count'));
         var current = 0;
-        var increment = 1; // می‌توانید مقدار افزایش را تغییر دهید
+        var increment = 1;
 
         var interval = setInterval(function () {
             current += increment;
@@ -54,7 +35,7 @@ function createrow() {
                 clearInterval(interval);
                 element.textContent = target; // مطمئن شوید که مقدار نهایی برابر با هدف باشد
             }
-        }, 0.001); // زمان انتظار بین افزایش‌ها (به میلی‌ثانیه)
+        }, 0.0000001); // زمان انتظار بین افزایش‌ها (به میلی‌ثانیه)
     }
 
     // اجرای تابع برای هر یک از عناصر با کلاس number
