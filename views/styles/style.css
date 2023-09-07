@@ -632,6 +632,7 @@ background: #ececec;
     transform: translateY(-50%);
     top: 55%;
     z-index: 99;
+    padding: 0px 10px 6px 10px;
 }
 
 #widget span {
@@ -653,4 +654,20 @@ background: #ececec;
 
 #users-manager:hover .sub-menu , #users-manager:hover .sub-menu a {
 display: block;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  background-color: var(--filterColor);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #fff;
+  margin-top: 40px;
+}
+
+footer a {
+    text-decoration: none;
+    color:#ffe408;
+    cursor: pointer;
 }

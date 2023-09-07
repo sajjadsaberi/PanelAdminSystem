@@ -25,7 +25,7 @@ $run_query = $mysqli->query($query_add_user);
     <link rel="stylesheet" href="./font-awesome/font-awesome.css">
     <link rel="stylesheet" href="../node_modules/persian-datepicker/dist/css/persian-datepicker.min.css">
     <link rel="stylesheet" href="./scripts/DataTables/datatables.min.css" />
-    <title>سامانه اتوماسیون سرای مهر بم</title>
+    <title>سامانه اتوماسیون سرای مهر</title>
 </head>
 <body>
     
@@ -252,8 +252,10 @@ $run_query = $mysqli->query($query_add_user);
 
 
 </div>
-
     </div>
+<footer>
+    <p>&copy; 2023 سامانه اتوماسیون مرکز بازپروری سرای مهر  -  تمامی حقوق محفوظ است  -  <a href="#"> طراحی و برنامه نویسی : امیرحسین صادقی</a></p>
+</footer>
 
 <?php }if($_SESSION["permission"] == "addUser"){ ?>
 
