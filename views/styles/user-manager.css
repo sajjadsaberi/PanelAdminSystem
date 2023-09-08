@@ -21,6 +21,7 @@
     --tableBTN: #a81d13 ;
     --tableBTNhover: #a83a32 ;
     --boxShadowColor: #00000054 ;
+    --BlackColor: #000 ;
 }
 
 #add-user-form {
@@ -58,7 +59,7 @@
     font-size: 16px;
     border: 0;
     font-weight: 200;
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid var(--whiteColor);
     transition: all .2s;
 }
 
@@ -150,7 +151,7 @@ input[type="number"]::-webkit-inner-spin-button {
     padding: 10px 5px;
     font-size: 15px;
     font-weight: 300;
-    color: #000;
+    color: var(--BlackColor);
 }
 
 .searchBox {
@@ -159,21 +160,26 @@ input[type="number"]::-webkit-inner-spin-button {
     border-radius: 55px;
     padding: 2px;
     margin-right: 40px;
+    transition: 0.4s;
 }
 
 .searchBox:hover > .searchInput {
     width: 90%;
     padding: 0 6px;
     padding-top: 8px;
+    padding-right: 35px;
+    transition: 0.4s;
 }
 
 .searchBox:hover > .searchButton {
-  background: white;
+  background: var(--whiteColor);
   color : #2f3640;
+  margin-top: -48px;
+  transition: 0.4s;
 }
 
 .searchButton {
-    color: white;
+    color: var(--whiteColor);
     float: right;
     width: 55px;
     height: 55px;
@@ -184,15 +190,17 @@ input[type="number"]::-webkit-inner-spin-button {
     align-items: center;
     transition: 0.4s;
     border: 0;
-    box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px var(--BlackColor);
+    transition: 0.4s;
 }
 
 .searchButton:active{
-    box-shadow: inset 0 0 5px #000;
+    box-shadow: inset 0 0 5px var(--BlackColor) ;
 }
 
 .searchButton:hover{
     cursor: pointer;
+    transition: 0.4s;
 }
 
 .searchButton svg {
@@ -200,22 +208,23 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .searchInput {
-    border:none;
+    border: none;
     background: none;
-    outline:none;
-    float:left;
+    outline: none;
+    float: left;
     padding: 0;
-    color: white;
-    font-size: 25px;
+    color: var(--whiteColor);
+    font-size: 20px;
     transition: 0.4s;
     line-height: 40px;
     width: 0px;
-    font-family: vazir;
-    padding-top: 8px;
+    font-family: IranYekanX;
+    padding-top: 6px;
+    padding-right: 15px;
 }
 
 .searchInput::placeholder {
-    color: #fff;
+    color: var(--whiteColor);
 }
 
 @media screen and (max-width: 620px) {
