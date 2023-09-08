@@ -1,11 +1,15 @@
 var ctx = document.getElementById('myChart').getContext('2d');
+
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['1397', '1398', '1399', '1400', '1401', '1402'],
+        labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور'],
         datasets: [{
-            label: 'Life expectancy',
-            data: [84.308, 84.188, 84.118, 83.706, 83.5, 83.468],
+            label: 'نمودار میزان پذیرش سال 1402',
+            data: [125,329,93,267,584,358],
+            font: {
+                family: "IranYekanX", 
+            },
             backgroundColor: [
                 'rgba(216, 27, 96, 0.6)',
                 'rgba(3, 169, 244, 0.6)',
@@ -36,6 +40,9 @@ var myChart = new Chart(ctx, {
             fontSize: 16,
             padding: 20
         },
+        font: {
+            family: "IranYekanX",
+        },
         scales: {
             yAxes: [{
                 ticks: {
@@ -51,8 +58,8 @@ var myChart1 = new Chart(ctx1, {
     data: {
         labels: ['1397', '1398', '1399', '1400', '1401', '1402'],
         datasets: [{
-            label: 'آمار دقیق  ',
-            data: [50, 84.188, 84.118, 83.706, 83.5, 83.468],
+            label: 'آمار ترخیص و بهبودی 10 سال اخیر  ',
+            data: [241,575,654,755,947,1218],
             backgroundColor: [
                 'rgba(216, 27, 96, 0.6)',
                 'rgba(3, 169, 244, 0.6)',

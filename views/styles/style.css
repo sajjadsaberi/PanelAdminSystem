@@ -27,6 +27,12 @@
     --tdTableColor: #c5c5c5 ;
 }
 
+::selection {
+    background-color: var(--filterColor);
+    color: var(--whiteColor);
+    text-shadow: 0px 1px 1px var(--blackColor);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -575,6 +581,11 @@ background: var(--filterInputColor);
     width: 20%;
     font-family: IranYekanX ;
 }
+
+.chart-text {
+    font-family: IranYekanX;
+}
+
 
 .table {
     width: 100%;

@@ -21,28 +21,30 @@ function createrow() {
     alert("کاربر افزوده شد")
 }
 
-    // تابعی برای افزایش شمارنده
-    function startCount(element) {
-        var target = parseInt(element.getAttribute('data-count'));
-        var current = 0;
-        var increment = 1;
+ // تابعی برای افزایش شمارنده
 
-        var interval = setInterval(function () {
-            current += increment;
-            element.textContent = current;
+function startCount(element) {
+    var target = parseInt(element.getAttribute('data-count'));
+    var current = 0;
+    var increment = 1;
 
-            if (current >= target) {
-                clearInterval(interval);
-                element.textContent = target; // مطمئن شوید که مقدار نهایی برابر با هدف باشد
-            }
-        }, 0.0000001); // زمان انتظار بین افزایش‌ها (به میلی‌ثانیه)
-    }
+    var interval = setInterval(function () {
+        current += increment;
+        element.textContent = current;
 
-    // اجرای تابع برای هر یک از عناصر با کلاس number
-    var numberElements = document.querySelectorAll('.number');
-    numberElements.forEach(function (element) {
-        startCount(element);
-    });
+        if (current >= target) {
+         clearInterval(interval);
+            element.textContent = target; // مطمئن شوید که مقدار نهایی برابر با هدف باشد
+        }
+    }, 0.0000001); // زمان انتظار بین افزایش‌ها (به میلی‌ثانیه)
+}
+
+ // اجرای تابع برای هر یک از عناصر با کلاس number
+var numberElements = document.querySelectorAll('.number');
+numberElements.forEach(function (element) {
+    startCount(element);
+});
+
 // add random text in header
 
 const texts = [
