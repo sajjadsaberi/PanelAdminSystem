@@ -162,6 +162,36 @@ padding: 15px 15px 15px 10px;
     margin: -10px 10px 10px 10px ;
 }
 
+.hidden {
+    display: none;
+}
+
+#notification-menu {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+}
+
+#notification-menu ul {
+    list-style-type: none;
+    padding: 0;
+    position: fixed;
+    background: var(--whiteColor);
+    border: 1px solid var(--tdTableColor)
+}
+
+#notification-menu li {
+    margin-bottom: 10px;
+    border-top: 1px solid var(--tdTableColor);
+    padding: 8px 20px 4px 20px;
+}
+
+#notification-menu a {
+    text-decoration: none;
+    color: var(--iconBoxcolor);
+}
+
 /* Content */
 
 #content-box {

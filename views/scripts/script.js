@@ -74,3 +74,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 displayRandomText();
 
+//notifiction
+
+// گرفتن اشاره به دکمه و منو
+const button = document.getElementById('notification-button');
+const menu = document.getElementById('notification-menu');
+
+// وقتی دکمه کلیک می‌شود
+button.addEventListener('click', function() {
+    // نمایش یا مخفی کردن منو
+    if (menu.style.display === 'none' || menu.style.display === '') {
+        menu.style.display = 'block';
+    } else {
+        menu.style.display = 'none';
+    }
+});
