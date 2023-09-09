@@ -19,6 +19,12 @@ $run_query = $mysqli->query($query_add_user);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="سامانه اتوماسیون اداری مرکز بازپروری سرای مهر استان کرمان"/>
+    <meta name="robots" content="noindex, nofollow"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="copyright" content="مرکز بازپروری سرای مهر" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
     <!-- <link rel="stylesheet" href="./styles/bootstrap/bootstrap.rtl.css"> -->
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/user-manager.css">
