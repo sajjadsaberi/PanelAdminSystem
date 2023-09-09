@@ -286,7 +286,7 @@ $run_query = $mysqli->query($query_add_user);
         </td>
         <td>
             <div id="cleander">
-                <input required type="text" name="birthdate" class="persianDatapicker">
+                <input required type="text" name="birthdate" class="persianDatapicker" style="width: 240px;">
             </div>
         </td>
         <td>
@@ -294,7 +294,7 @@ $run_query = $mysqli->query($query_add_user);
         </td>
         <td>
             <div id="cleander">
-                <input required type="text" name="signdate" class="persianDatapicker">
+                <input required type="text" name="signdate" class="persianDatapicker" style="width: 240px;">
             </div>
         </td>
     </tr>
@@ -304,10 +304,12 @@ $run_query = $mysqli->query($query_add_user);
         <td>
             <select name="education" id="education" style="width: 85%;">
                 <option value="null" selected disabled>تحصیلات</option>
+                <option value="bisavad">بی سواد</option>
                 <option value="zirdiplom">زیر دیپلم</option>
                 <option value="diplom">دیپلم</option>
                 <option value="lisanse">لیسانس</option>
                 <option value="fogh">فوق لیسانس</option>
+                <option value="doctor">دکترا و بالاتر</option>
             </select>
         </td>
     </tr>
@@ -325,6 +327,7 @@ $run_query = $mysqli->query($query_add_user);
                 <option value="null" selected disabled>وضعیت تاهل</option>
                 <option value="rell">متاهل</option>
                 <option value="single">مجرد</option>
+                <option value="talagh">مطلقه</option
             </select>
         </td>
     </tr>
@@ -337,7 +340,7 @@ $run_query = $mysqli->query($query_add_user);
         </td>
         <td>
             <div id="cleander">
-                <input type="text" name="outdate" class="persianDatapicker">
+                <input type="text" name="outdate" class="persianDatapicker" style="width: 240px;">
             </div>
         </td>
         <td>
@@ -345,7 +348,7 @@ $run_query = $mysqli->query($query_add_user);
         </td>
         <td>
             <div id="cleander">
-                <input type="text" name="dublelog" class="persianDatapicker">
+                <input type="text" name="dublelog" class="persianDatapicker" style="width: 240px;">
             </div>
         </td>
     </tr>
