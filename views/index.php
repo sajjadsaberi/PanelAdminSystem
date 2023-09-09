@@ -103,7 +103,7 @@ $run_query = $mysqli->query($query_add_user);
         </ul>
     </div>
             <span class="head-prof">
-                <img src="./images/prof.jpg" alt="Profile">
+                <img src="./images/aks.png" alt="Profile">
             </span>
         </section>
 </header>
