@@ -33,26 +33,12 @@
     text-shadow: 0px 1px 1px var(--blackColor);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     outline: none;
     font-family: IranYekanX;
 }
-
-/* استایل های مربوط به اسکرول بار
-::-webkit-scrollbar {
-    width: 50px;
-    background-color: #0080ff;
-}
-::-webkit-scrollbar-track {
-    box-shadow: inset 0px -1px 13px #0205af;
-    border-radius: 10px;
-}
-::-webkit-scrollbar-thumb {
-    background: #4a00ff;
-    border-radius: 10px;
-} */
 
 body {
     direction: rtl;
@@ -151,7 +137,7 @@ padding: 15px 15px 15px 10px;
     width: 10px;
     height: 10px;
     color: #02a802;
-    margin: 10px 16px 0px 0px;
+    margin: 10px 8px 0px 0px;
     position: absolute;
 }
 
@@ -159,14 +145,15 @@ padding: 15px 15px 15px 10px;
     content: "آنلاین";
     position: absolute;
     font-size: 12px;
-    margin: 8px 32px 0px 0px;
+    margin: 8px 22px 0px 0px;
 }
 
 .profile img {
     width: 20%;
     border-radius: 8px;
-    box-shadow: 0 0 8px #00000041;
-    margin: 10px;
+    box-shadow: 0 0 3px var(--iconBoxcolor);
+    margin: 17px;
+    height: 80%;
 }
 
 .profile span {
@@ -280,6 +267,10 @@ z-index: 999;
 
 #content-box header svg:hover{
     cursor: pointer;
+}
+
+.head-text {
+    margin-right: -300px;
 }
 
 #randomText {
