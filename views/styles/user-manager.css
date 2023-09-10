@@ -93,6 +93,7 @@ input[type="number"]::-webkit-inner-spin-button {
     font-weight: 200;
     transform: translateY(50%);
     bottom: 50%;
+    background-color: var(--whiteColor);
 }
 
 #add-user-form table td select option {
@@ -177,14 +178,14 @@ input[type="number"]::-webkit-inner-spin-button {
     padding: 5px 10px;
     border-radius: 3px;
     font-weight: 300;
-    background: #324849;
+    background: var(--subColor);
     font-size: 14px;
     transition: all .2s;
 }
 
 #toolsbar a:hover{
     cursor: pointer;
-    background: #507274;
+    background: var(--subHoverColor);
 }
 
 .all-table {
@@ -204,4 +205,6 @@ input[type="number"]::-webkit-inner-spin-button {
 .all-table tr td , .all-table tr th {
     border: 1px solid #888888;
     text-align: center;
+    padding-right: 6px;
+    padding-left: 6px ;
 }
