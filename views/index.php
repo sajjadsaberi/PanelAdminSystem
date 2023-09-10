@@ -51,7 +51,7 @@ $run_query = $mysqli->query($query_add_user);
     <li class="profile">
         <img src="./images/aks.png" alt="Profile">
         <div class="online"><i class="fa fa-circle" aria-hidden="true"></i></div>
-        <span>مدیریت کل - دکتر صابری</span>
+        <span><span><?php echo $_SESSION["admin-name"]; ?></span><span><?php if($_SESSION["admin-managment"] == "full") {echo "مدیر کل";}elseif($_SESSION["admin-managment"] == "manager"){echo "مدیر مجموعه";}else{echo "منشی";}  ?></span></span>
     </li>
     <li>
         
@@ -100,7 +100,7 @@ $run_query = $mysqli->query($query_add_user);
         <ul>
             <li><a href="#">گزینه 1</a></li>
             <li><a href="#">گزینه 2</a></li>
-            <li><a href="#">گزینه 3</a></lih
+            <li><a href="#">گزینه 3</a></li>
             <li><a href="#">گزینه 4</a></li>
         </ul>
     </div>
@@ -316,7 +316,7 @@ $run_query = $mysqli->query($query_add_user);
         <td><input required type="number" name="shsh" placeholder="شماره شناسنامه"></td>
         <td><input required type="text" name="loc" placeholder="محل صدور شناسنامه"></td>
         <td>
-            <select name="education" id="education" style="width: 85%;">
+            <select name="eduction" id="education" style="width: 85%;">
                 <option value="null" selected disabled>تحصیلات</option>
                 <option value="بی سواد">بی سواد</option>
                 <option value="زیردیپلم">زیر دیپلم</option>
@@ -466,6 +466,5 @@ $run_query = $mysqli->query($query_add_user);
 <script src="./scripts/app.js"></script>
 <script src="./scripts/table.js"></script>
 <script src="./scripts/DataTables/datatables.min.js"></script>
-<script type="text/javascript" src="https://site.com/pslivechat/php/app.php/widget-init.js"></script>
 <!-- <script src="./scripts/bootstrap/bootstrap.min.js.map"></script> -->
 </html>

@@ -11,7 +11,7 @@ $birthdate = $_POST["birthdate"];
 $signdate = $_POST["signdate"];
 $shsh = $_POST["shsh"];
 $loc = $_POST["loc"];
-$education = $_POST["education"];
+$education = $_POST["eduction"];
 $din = $_POST["din"];
 $mazhab = $_POST["mazhab"];
 $job = $_POST["job"];
@@ -29,14 +29,26 @@ if(!empty($_POST["submit"])){
 
         $admin_permission = $_SESSION["admin-permission"];
 
-        $query_add_user = "
+        if($admin_permission == "full"){
+            echo "شما ادمین هستید";
+        }else{
+
+            $query_add_user = "
         INSERT INTO $admin_permission(name , fathername , gender , birth , shsh , loc , codemeli , eduction , job , taahol , din , mazhab , address , logdate , outdate , dublelog , adminname , policename)
         VALUES ( '$name' , '$fathername' , '$gender' , '$birthdate' , $shsh , '$loc' , $codemeli , '$eduction' , '$job' , '$taahol' , '$din' , '$mazhab' , '$address' , '$logdate' , '$outdate' , '$dublelog' , '$adminlog' , '$police');
         ";
 
+        $query_add_user_full = "
+        INSERT INTO full(name , fathername , gender , birth , shsh , loc , codemeli , eduction , job , taahol , din , mazhab , address , logdate , outdate , dublelog , adminname , policename)
+        VALUES ( '$name' , '$fathername' , '$gender' , '$birthdate' , $shsh , '$loc' , $codemeli , '$eduction' , '$job' , '$taahol' , '$din' , '$mazhab' , '$address' , '$logdate' , '$outdate' , '$dublelog' , '$adminlog' , '$police');
+        ";
+
+        $create_query = $mysqli->query($query_add_user_full);
         $create_query = $mysqli->query($query_add_user);
 
         header("Location:../router/dashboard.php");
+
+        }
 
 
     }else{
