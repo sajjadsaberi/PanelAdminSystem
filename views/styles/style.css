@@ -22,7 +22,7 @@
     --filterInputColor: #45696b ;
     --filterColor: #324849 ;
     --iconBoxcolor: #333 ;
-    --ContentBoxColor: #d3d3d3 ;
+    --ContentBoxColor: #d3d3d38c ;
     --blackColor: #000 ;
     --tdTableColor: #c5c5c5 ;
 }
@@ -63,6 +63,7 @@ body {
     overflow: hidden;
     position: fixed;
     z-index: 999;
+    box-shadow: 0 0 7px #00000065;
 }
 
 #panel-items {
@@ -341,6 +342,14 @@ z-index: 999;
     color: var(--iconBoxcolor);
 }
 
+.title-box .path {
+    position: absolute;
+    width: 400px;
+    right: 20px;
+    top: -2px;
+    color: var(--iconBoxcolor);
+}
+
 
 /* Script For Menu */
 
@@ -411,7 +420,7 @@ z-index: 999;
         rotateX(20deg) 
         translateY(-20px);
         cursor: pointer;
-    background: linear-gradient(to bottom , #ffffff05 , var(--ContentBoxColor));
+    background: linear-gradient(to top , #ffffff00 , var(--ContentBoxColor));
 }
 
 #info .box-users .icon , #info .box-users .info,

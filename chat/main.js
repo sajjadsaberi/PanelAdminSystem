@@ -1,10 +1,14 @@
-function sendMessage() {
-    const messageInput = document.getElementById('message-input');
-    const chatMessages = document.getElementById('chat-messages');
-    const messageText = messageInput.value.trim();
+// المان کانست خارج از توایع تعریف شود
 
-    if (messageText !== '') {
-        const messageElement = document.createElement('div');
+const messageInput = document.getElementById('message-input');
+const chatMessages = document.getElementById('chat-messages');
+const messageText = messageInput.value;
+
+function sendMessage() {
+    
+    if (messageText != '') {
+        
+        let messageElement = document.createElement('div');
         messageElement.className = 'message';
         messageElement.textContent = messageText;
 

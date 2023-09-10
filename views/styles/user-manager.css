@@ -154,82 +154,54 @@ input[type="number"]::-webkit-inner-spin-button {
     color: var(--BlackColor);
 }
 
-.searchBox {
-    background: #595959;
-    height: 55px;
-    border-radius: 55px;
-    padding: 2px;
-    margin-right: 40px;
-    transition: 0.4s;
-}
+/* Toolbar */
 
-.searchBox:hover > .searchInput {
+#toolsbar {
     width: 90%;
-    padding: 0 6px;
-    padding-top: 8px;
-    padding-right: 35px;
-    transition: 0.4s;
-}
-
-.searchBox:hover > .searchButton {
-  background: var(--whiteColor);
-  color : #2f3640;
-  margin-top: -48px;
-  transition: 0.4s;
-}
-
-.searchButton {
-    color: var(--whiteColor);
-    float: right;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: #2f3640;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    transition: 0.4s;
+}
+
+#toolsbar input {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 14px;
     border: 0;
-    box-shadow: 0 0 5px var(--BlackColor);
-    transition: 0.4s;
+    box-shadow: inset 3px 3px 7px #00000027;
 }
 
-.searchButton:active{
-    box-shadow: inset 0 0 5px var(--BlackColor) ;
+#toolsbar a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: 300;
+    background: #324849;
+    font-size: 14px;
+    transition: all .2s;
 }
 
-.searchButton:hover{
+#toolsbar a:hover{
     cursor: pointer;
-    transition: 0.4s;
+    background: #507274;
 }
 
-.searchButton svg {
-    font-size: 25px;
+.all-table {
+    width: 90%;
+    height: fit-content;
+    font-size: 13px;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.searchInput {
-    border: none;
-    background: none;
-    outline: none;
-    float: left;
-    padding: 0;
-    color: var(--whiteColor);
-    font-size: 20px;
-    transition: 0.4s;
-    line-height: 40px;
-    width: 0px;
+.all-table tr th{
+    padding: 5px 10px;
     font-family: IranYekanX;
-    padding-top: 6px;
-    padding-right: 15px;
+    font-weight: 300;
 }
 
-.searchInput::placeholder {
-    color: var(--whiteColor);
-}
-
-@media screen and (max-width: 620px) {
-.searchBox:hover > .searchInput {
-    width: 150px;
-    padding: 0 6px;
-}
+.all-table tr td , .all-table tr th {
+    border: 1px solid #888888;
+    text-align: center;
 }

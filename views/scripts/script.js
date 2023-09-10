@@ -2,7 +2,6 @@ const MenuBtn = document.querySelector("#menu-btn");
 const ContentBox = document.querySelector("#content-box");
 const Panel = document.querySelector("#panel");
 const dataTable = document.querySelector("#data-table");
-
 const crtBtn = document.getElementsByName("submit");
 
 // Open & Close Menu
@@ -36,7 +35,7 @@ function startCount(element) {
          clearInterval(interval);
             element.textContent = target; // مطمئن شوید که مقدار نهایی برابر با هدف باشد
         }
-    }, 0.0000001); // زمان انتظار بین افزایش‌ها (به میلی‌ثانیه)
+    }, 0.1); // زمان انتظار بین افزایش‌ها (به میلی‌ثانیه)
 }
 
  // اجرای تابع برای هر یک از عناصر با کلاس number
@@ -56,12 +55,12 @@ const texts = [
 ];
 
 function displayRandomText() {
-    const randomIndex = Math.floor(Math.random() * texts.length);
-    const randomText = texts[randomIndex];
+    let randomIndex = Math.floor(Math.random() * texts.length);
+    let randomText = texts[randomIndex];
     document.getElementById('randomText').textContent = randomText;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('load', function() {
     document.addEventListener('keyup', function(event) {
         if (event.keyCode === 116) {  
             displayRandomText();

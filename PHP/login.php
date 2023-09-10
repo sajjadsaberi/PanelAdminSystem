@@ -29,26 +29,19 @@ $loweruser = strtolower($user);
                 for ($i = 0 ; $i <= $runner->num_rows ; $i++) {
                 $assoc = $runner->fetch_assoc();
         if($loweruser == $assoc["username"] && $pass == $assoc["password"]){
+
+            $permission_query = "
+            select id from manager where username='$user';
+            ";
+
+            $get_permission_admin = $mysqli->query($permission_query);
+            $admin_permission = $get_permission_admin->fetch_all()[0][0];
+
             $_SESSION["permission"] = "dashboard";
-
-
-
-
-            // Add User Query
-            // $add_user = 'INSERT INTO users(name , fathername , codemeli , shsh)
-            // VALUES ("mahdi" , "ali" , 12341234 , 214214);
-            // ';
-
-            // $test = $mysqli->query($add_user);
-            // $show = $test->fetch_assoc();
-            // echo "<pre>";
-            // print_r($show);
-            // echo "</pre>";
+            $_SESSION["admin-permission"] = "$admin_permission";
 
 
             header("Location:../views/index.php");
-
-
 
         }else{
             echo "Username Or Password In not Valid !";

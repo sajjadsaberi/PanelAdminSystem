@@ -7,8 +7,10 @@ error_reporting(0);
 
 // PHP Code 
 
+$admin_permission = $_SESSION["admin-permission"];
+
 $query_add_user = "
-select * from users;
+select * from $admin_permission;
 ";
 
 $run_query = $mysqli->query($query_add_user);
@@ -98,7 +100,7 @@ $run_query = $mysqli->query($query_add_user);
         <ul>
             <li><a href="#">گزینه 1</a></li>
             <li><a href="#">گزینه 2</a></li>
-            <li><a href="#">گزینه 3</a></li>
+            <li><a href="#">گزینه 3</a></lih
             <li><a href="#">گزینه 4</a></li>
         </ul>
     </div>
@@ -121,6 +123,7 @@ $run_query = $mysqli->query($query_add_user);
     <div class="icon-box"><i class="fa fa-home"></i></div>
     <h4>صفحه اصلی</h4>
     <div class="icon-box2"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+    <h4 class="path"><?php echo $_SESSION["path"]; ?></h4>
     </div>
 
     <div id="widget">
@@ -232,7 +235,7 @@ $run_query = $mysqli->query($query_add_user);
             }
         } else {
             echo "<tr>";
-            echo "<td>اطلاعاتی وجود ندارد</td>";
+            echo "<td colspan='6'>اطلاعاتی وجود ندارد</td>";
             echo "</tr>";
         }
 ?>
@@ -249,13 +252,10 @@ $run_query = $mysqli->query($query_add_user);
 <ul>
 <?php
     if ($run_query->num_rows > 0) {
-            for ($i = 0 ; $i < $run_query->num_rows ; $i++) {
-                $row = $run_query->fetch_assoc();
                     echo "<li>";
-                    echo $row["name"];
-                    echo "داده ای برای نمایش وجود ندارد";
+                    echo $_SESSION["news"];
+                    echo " در سامانه ثبت شد ";
                     echo "</li>";
-            }
         } else {
             echo "<tr>";
             echo "<td>اطلاعاتی وجود ندارد</td>";
@@ -289,8 +289,8 @@ $run_query = $mysqli->query($query_add_user);
         <td>
         <select name="gender" id="gender">
             <option value="null" disabled selected>جنسیت</option>
-            <option value="men">مرد</option>
-            <option value="women">زن</option>
+            <option value="مرد">مرد</option>
+            <option value="زن">زن</option>
         </select>
         </td>
     </tr>
@@ -318,12 +318,12 @@ $run_query = $mysqli->query($query_add_user);
         <td>
             <select name="education" id="education" style="width: 85%;">
                 <option value="null" selected disabled>تحصیلات</option>
-                <option value="bisavad">بی سواد</option>
-                <option value="zirdiplom">زیر دیپلم</option>
-                <option value="diplom">دیپلم</option>
-                <option value="lisanse">لیسانس</option>
-                <option value="fogh">فوق لیسانس</option>
-                <option value="doctor">دکترا و بالاتر</option>
+                <option value="بی سواد">بی سواد</option>
+                <option value="زیردیپلم">زیر دیپلم</option>
+                <option value="دیپلم">دیپلم</option>
+                <option value="لیسانس">لیسانس</option>
+                <option value="فوق لیسانس">فوق لیسانس</option>
+                <option value="دکترا و بالاتر">دکترا و بالاتر</option>
             </select>
         </td>
     </tr>
@@ -339,9 +339,9 @@ $run_query = $mysqli->query($query_add_user);
         <td style="width: 25%;">
             <select name="taahol" id="taahol" style="width: 82%;">
                 <option value="null" selected disabled>وضعیت تاهل</option>
-                <option value="rell">متاهل</option>
-                <option value="single">مجرد</option>
-                <option value="talagh">مطلقه</option
+                <option value="متاهل">متاهل</option>
+                <option value="مجرد">مجرد</option>
+                <option value="مطلقه">مطلقه</option>
             </select>
         </td>
     </tr>
@@ -382,17 +382,67 @@ $run_query = $mysqli->query($query_add_user);
 
 <?php }elseif($_SESSION["permission"] == "showallusers"){ ?>
 
+    <div id="toolsbar">
+        <input type="text" placeholder="حذف مددجو">
+        <input type="text" placeholder="جستجو">
+        <a href="../PHP/router/user-manager/add-user.php"><i class="fa fa-plus"></i> افزودن مددجو</a>
+    </div>
 
-    <!-- Search Box -->
-
-<div class="searchBox">
-
-    <input class="searchInput"type="text" placeholder="جستجو">
-    <button class="searchButton" href="#">
-        <i class="material-icons fa fa-search">
-        </i>
-    </button>
-</div>
+<table class="all-table">
+<tr>
+    <th>ردیف</th>
+    <th>نام و نام خانوادگی</th>
+    <th>نام پدر</th>
+    <th>جنسیت</th>
+    <th>تاریخ تولد</th>
+    <th>شماره شناسنامه</th>
+    <th>محل صدور</th>
+    <th>کد ملی</th>
+    <th>تحصیلات</th>
+    <th>شغل</th>
+    <th>تاهل</th>
+    <th>دین</th>
+    <th>مذهب</th>
+    <th>آدرس</th>
+    <th>تاریخ ورود</th>
+    <th>تاریخ ترخیص</th>
+    <th>پذیرش قبلی</th>
+    <th>نام مسـًول</th>
+    <th>نام تحویل دهنده</th>
+</tr>
+<?php
+    if ($run_query->num_rows > 0) {
+            for ($i = 0 ; $i <= $run_query->num_rows ; $i++) {
+                $row = $run_query->fetch_assoc();
+                echo "<tr>";
+                echo "<td>" . $row["id"] . "</td>";
+                echo "<td>" . $row["name"] . "</td>";
+                echo "<td>" . $row["fathername"] . "</td>";
+                echo "<td>" . $row["gender"] . "</td>";
+                echo "<td>" . $row["birth"] . "</td>";
+                echo "<td>" . $row["shsh"] . "</td>";
+                echo "<td>" . $row["loc"] . "</td>";
+                echo "<td>" . $row["codemeli"] . "</td>";
+                echo "<td>" . $row["eduction"] . "</td>";
+                echo "<td>" . $row["job"] . "</td>";
+                echo "<td>" . $row["taahol"] . "</td>";
+                echo "<td>" . $row["din"] . "</td>";
+                echo "<td>" . $row["mazhab"] . "</td>";
+                echo "<td>" . $row["address"] . "</td>";
+                echo "<td>" . $row["logdate"] . "</td>";
+                echo "<td>" . $row["outdate"] . "</td>";
+                echo "<td>" . $row["dublelog"] . "</td>";
+                echo "<td>" . $row["adminname"] . "</td>";
+                echo "<td>" . $row["policename"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr>";
+            echo "<td colspan='19'>اطلاعاتی وجود ندارد</td>";
+            echo "</tr>";
+        }
+?>
+</table>
 
 
     <?php }else{header("Location:../PHP/router/dashboard.php");} ?>
@@ -416,5 +466,6 @@ $run_query = $mysqli->query($query_add_user);
 <script src="./scripts/app.js"></script>
 <script src="./scripts/table.js"></script>
 <script src="./scripts/DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="https://site.com/pslivechat/php/app.php/widget-init.js"></script>
 <!-- <script src="./scripts/bootstrap/bootstrap.min.js.map"></script> -->
 </html>
