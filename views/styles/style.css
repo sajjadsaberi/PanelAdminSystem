@@ -56,14 +56,21 @@ body {
 
 /* Panel  */
 
+#panel::-webkit-scrollbar {
+    display: none;
+  }
+
 #panel {
     width: 20%;
     height: 100%;
     background: var(--bgPanel) ;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     position: fixed;
     z-index: 999;
     box-shadow: 0 0 7px #00000065;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 #panel-items {

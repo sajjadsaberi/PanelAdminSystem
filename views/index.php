@@ -28,6 +28,14 @@ $run_query = $mysqli->query($query_add_user);
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
     <!-- <link rel="stylesheet" href="./styles/bootstrap/bootstrap.rtl.css"> -->
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        $(function(){
+            $("#panel-include").load("../includes/panel.php");
+            $("#header-include").load("../includes/header.php");
+            $("#showalluser-include").load("../includes/showallusers.php");
+        })
+    </script>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/user-manager.css">
     <link rel="stylesheet" href="./font-awesome/font-awesome.css">
@@ -41,44 +49,7 @@ $run_query = $mysqli->query($query_add_user);
 
 <!-- Panel -->
 
-<section id="panel">
-
-    <ul id="panel-items">
-    <li class="logo">
-        
-        <span>مرکز بازپروری سرای مهر</span>
-    </li>
-    <li class="profile">
-        <img src="./images/aks.png" alt="Profile">
-        <div class="online"><i class="fa fa-circle" aria-hidden="true"></i></div>
-        <span><span><?php echo $_SESSION["admin-name"]; ?></span><span><?php if($_SESSION["admin-managment"] == "full") {echo "مدیر کل";}elseif($_SESSION["admin-managment"] == "manager"){echo "مدیر مجموعه";}else{echo "منشی";}  ?></span></span>
-    </li>
-    <li>
-        
-        <a href="../PHP/router/dashboard.php" class="a-in-li"><i class="fa fa-home"></i> داشبورد </a>
-    </li>
-    <li>
-        <a href="#"><i class="fa fa-users" class="a-in-li"></i> مدیریت کاربران </a>
-    </li>
-    <li id="users-manager">
-        <a href="#users-manager" class="a-in-li"><i class="fa-duotone fa-user"></i> مدیریت مدد جویان </a>
-        <div class="sub-menu">
-                <a href="../PHP/router/user-manager/add-user.php"><i class="fa fa-plus"></i> اضافه کردن کاربر </a>
-                <a href="../PHP/router/user-manager/show-all-users.php"><i class="fa fa-search"></i> نمایش همه کاربران </a>
-            </div>
-    </li>
-    <li>
-        <a href="#"><i class="fa fa-message" class="a-in-li"></i>گزارش گیری ها</a>
-    </li>
-    <li>
-        <a href="#"><i class="fa fa-cogs"></i>تنظیمات قالب</a>
-    </li>
-    <li>
-        <a href="../PHP/router/exit.php"><i class="fa fa-sign-out"></i> خروج از حساب </a>
-    </li>
-    </ul>
-
-</section>
+<div id="panel-include"></div>
 
 <!-- Content Page -->
 
@@ -86,29 +57,7 @@ $run_query = $mysqli->query($query_add_user);
 
     <!-- Header -->
 
-<header>
-        <section class="head-menu">
-            <i class="fa fa-bars" onclick="menubtn()"></i>
-        </section>
-        <section class="head-text">
-        <div id="randomText" onload="displayRandomText()"></div>
-        </section>
-        <section class="head-items">
-            <a href="#"><i class="fa fa-arrow-right"></i></a>
-            <a href="#" id="notification-button"><i class="fa fa-envelope"></i></a>
-            <div id="notification-menu" class="hidden">
-        <ul>
-            <li><a href="#">گزینه 1</a></li>
-            <li><a href="#">گزینه 2</a></li>
-            <li><a href="#">گزینه 3</a></li>
-            <li><a href="#">گزینه 4</a></li>
-        </ul>
-    </div>
-            <span class="head-prof">
-                <img src="./images/aks.png" alt="Profile">
-            </span>
-        </section>
-</header>
+<div id="header-include"></div>
 
     <!-- End Header -->
 
@@ -388,61 +337,8 @@ $run_query = $mysqli->query($query_add_user);
         <a href="../PHP/router/user-manager/add-user.php"><i class="fa fa-plus"></i> افزودن مددجو</a>
     </div>
 
-<table class="all-table">
-<tr>
-    <th>ردیف</th>
-    <th>نام و نام خانوادگی</th>
-    <th>نام پدر</th>
-    <th>جنسیت</th>
-    <th>تاریخ تولد</th>
-    <th>شماره شناسنامه</th>
-    <th>محل صدور</th>
-    <th>کد ملی</th>
-    <th>تحصیلات</th>
-    <th>شغل</th>
-    <th>تاهل</th>
-    <th>دین</th>
-    <th>مذهب</th>
-    <th>آدرس</th>
-    <th>تاریخ ورود</th>
-    <th>تاریخ ترخیص</th>
-    <th>پذیرش قبلی</th>
-    <th>نام مسـًول</th>
-    <th>نام تحویل دهنده</th>
-</tr>
-<?php
-    if ($run_query->num_rows > 0) {
-            for ($i = 0 ; $i <= $run_query->num_rows ; $i++) {
-                $row = $run_query->fetch_assoc();
-                echo "<tr>";
-                echo "<td>" . $row["id"] . "</td>";
-                echo "<td>" . $row["name"] . "</td>";
-                echo "<td>" . $row["fathername"] . "</td>";
-                echo "<td>" . $row["gender"] . "</td>";
-                echo "<td>" . $row["birth"] . "</td>";
-                echo "<td>" . $row["shsh"] . "</td>";
-                echo "<td>" . $row["loc"] . "</td>";
-                echo "<td>" . $row["codemeli"] . "</td>";
-                echo "<td>" . $row["eduction"] . "</td>";
-                echo "<td>" . $row["job"] . "</td>";
-                echo "<td>" . $row["taahol"] . "</td>";
-                echo "<td>" . $row["din"] . "</td>";
-                echo "<td>" . $row["mazhab"] . "</td>";
-                echo "<td>" . $row["address"] . "</td>";
-                echo "<td>" . $row["logdate"] . "</td>";
-                echo "<td>" . $row["outdate"] . "</td>";
-                echo "<td>" . $row["dublelog"] . "</td>";
-                echo "<td>" . $row["adminname"] . "</td>";
-                echo "<td>" . $row["policename"] . "</td>";
-                echo "</tr>";
-            }
-        } else {
-            echo "<tr>";
-            echo "<td colspan='19'>اطلاعاتی وجود ندارد</td>";
-            echo "</tr>";
-        }
-?>
-</table>
+<!-- Table Users -->
+    <div id="showalluser-include"></div>
 
 
     <?php }else{header("Location:../PHP/router/dashboard.php");} ?>
@@ -460,7 +356,6 @@ $run_query = $mysqli->query($query_add_user);
 <script src="./scripts/charts.js"></script>
 <script src="./font-awesome/all.js"></script>
 <script src="./scripts/script.js"></script>
-<script src="../node_modules/jquery/dist/jquery.js"></script>
 <script src="../node_modules/persian-datepicker/dist/js/persian-datepicker.min.js"></script>
 <script src="../node_modules/persian-date/dist/persian-date.min.js"></script>
 <script src="./scripts/app.js"></script>
