@@ -23,7 +23,7 @@ $run_query = $mysqli->query($query_add_user);
     <div class="info-box box-users" style="background-color: #2d5be4;">
     <div class="info">
         <span class="about">تعداد مدد جویان</span>
-        <span class="number" data-count="1254">0</span>
+        <span class="number" data-count="1154">0</span>
     </div>
     <div class="icon"><i class="fa fa-users"></i></div>
     </div>
@@ -37,7 +37,7 @@ $run_query = $mysqli->query($query_add_user);
     <div class="info-box box-sign" style="background-color: #00a65a;color: #FFF;">
     <div class="info">
         <span class="about">تعداد ترخیص شده ها</span>
-        <span class="number" data-count="1423">0</span>
+        <span class="number" data-count="982">0</span>
     </div>
     <div class="icon"><i class="fa fa-sign-in"></i></div>
     </div>
