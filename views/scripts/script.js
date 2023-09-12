@@ -33,12 +33,10 @@ function startCount(element) {
 
         if (current >= target) {
          clearInterval(interval);
-            element.textContent = target; // مطمئن شوید که مقدار نهایی برابر با هدف باشد
+            element.textContent = target;
         }
     }, 0.1); // زمان انتظار بین افزایش‌ها (به میلی‌ثانیه)
 }
-
- // اجرای تابع برای هر یک از عناصر با کلاس number
 var numberElements = document.querySelectorAll('.number');
 numberElements.forEach(function (element) {
     startCount(element);

@@ -36,15 +36,3 @@ function backToSignin() {
 }
 
 
-// removeClass.addEventListener("click" , () => {
-
-
-//     container.classList.remove("run"); 
-//        form.classList.remove("run")
-    
-  
-//       container.classList.remove("change-area");
-//     form.classList.remove("change-area") 
-
-
-// })

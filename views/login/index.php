@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="../font-awesome/all.css">
-    <title>ورود به سامانه مرکز بازپروری سرای مهر بم</title>
+    <title>ورود به سامانه مرکز بازپروری سرای مهر</title>
 </head>
 <body>
     
@@ -69,18 +69,6 @@
 </div>
 
 </div>
-
-
-
-<!-- Modal Boxes -->
-
-<!-- <span class="modal-left">09130505884 - 09179797130</span>
-<span class="modal-right" style="color:#000;">مرکز ترک اعتیاد و بازپروری سرای مهر</span>
-<span class="modal-right">زیر نظر سازمان بهزیستی استان کرمان</span>
-<span class="modal-right">کرمان خیابان شهید صدوقی نبش صدوقی شماره سیزده</span>
-<span class="modal-right">آدرس : </span>
-<span class="modal-left">تلفن تماس : </span> -->
-
 
 </div>
 
