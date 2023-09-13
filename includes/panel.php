@@ -48,10 +48,10 @@ $run_query = $mysqli->query($query_add_user);
         <a href="#"><i class="fa fa-message" class="a-in-li"></i>گزارش گیری</a>
     </li>
     <li>
-        <a href="#"><i class="fa fa-worker" class="a-in-li"></i>افزودن مدیر</a>
+        <a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>افزودن مدیر</a>
     </li>
     <li>
-        <a href="#"><i class="fa fa-cogs"></i>تنظیمات قالب</a>
+        <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i>تنظیمات قالب</a>
     </li>
     <li>
         <a href="../PHP/router/exit.php"><i class="fa fa-sign-out"></i> خروج از حساب </a>
