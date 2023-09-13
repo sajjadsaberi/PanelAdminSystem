@@ -45,7 +45,7 @@ $run_query = $mysqli->query($query_add_user);
             </div>
     </li>
     <li>
-        <a href="#"><i class="fa fa-message" class="a-in-li"></i>گزارش گیری ها</a>
+        <a href="#"><i class="fa fa-message" class="a-in-li"></i>گزارش گیری</a>
     </li>
     <li>
         <a href="#"><i class="fa fa-worker" class="a-in-li"></i>افزودن مدیر</a>

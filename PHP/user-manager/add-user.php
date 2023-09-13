@@ -11,7 +11,7 @@ $birthdate = $_POST["birthdate"];
 $signdate = $_POST["signdate"];
 $shsh = $_POST["shsh"];
 $loc = $_POST["loc"];
-$education = $_POST["eduction"];
+$education = $_POST["education"];
 $din = $_POST["din"];
 $mazhab = $_POST["mazhab"];
 $job = $_POST["job"];
@@ -35,12 +35,12 @@ if(!empty($_POST["submit"])){
 
             $query_add_user = "
         INSERT INTO $admin_permission(name , fathername , gender , birth , shsh , loc , codemeli , eduction , job , taahol , din , mazhab , address , logdate , outdate , dublelog , adminname , policename)
-        VALUES ( '$name' , '$fathername' , '$gender' , '$birthdate' , $shsh , '$loc' , $codemeli , '$eduction' , '$job' , '$taahol' , '$din' , '$mazhab' , '$address' , '$logdate' , '$outdate' , '$dublelog' , '$adminlog' , '$police');
+        VALUES ( '$name' , '$fathername' , '$gender' , '$birthdate' , $shsh , '$loc' , $codemeli , '$education' , '$job' , '$taahol' , '$din' , '$mazhab' , '$address' , '$logdate' , '$outdate' , '$dublelog' , '$adminlog' , '$police');
         ";
 
         $query_add_user_full = "
         INSERT INTO full(name , fathername , gender , birth , shsh , loc , codemeli , eduction , job , taahol , din , mazhab , address , logdate , outdate , dublelog , adminname , policename)
-        VALUES ( '$name' , '$fathername' , '$gender' , '$birthdate' , $shsh , '$loc' , $codemeli , '$eduction' , '$job' , '$taahol' , '$din' , '$mazhab' , '$address' , '$logdate' , '$outdate' , '$dublelog' , '$adminlog' , '$police');
+        VALUES ( '$name' , '$fathername' , '$gender' , '$birthdate' , $shsh , '$loc' , $codemeli , '$education' , '$job' , '$taahol' , '$din' , '$mazhab' , '$address' , '$logdate' , '$outdate' , '$dublelog' , '$adminlog' , '$police');
         ";
 
         $create_query = $mysqli->query($query_add_user_full);

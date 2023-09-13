@@ -1,24 +1,3 @@
-<?php
-
-include_once "../utils/connection.php";
-
-session_start();
-error_reporting(0);
-
-// PHP Code 
-
-$admin_permission = $_SESSION["admin-permission"];
-
-$query_add_user = "
-select * from $admin_permission;
-";
-
-$run_query = $mysqli->query($query_add_user);
-
-
-// End PHP Code
-?>
-
 <table class="all-table">
 <tr>
     <th>ردیف</th>

@@ -13,13 +13,6 @@ ContentBox.classList.toggle("longer");
 
 }
 
-
-// Add row in table
-
-function createrow() {
-    alert("کاربر افزوده شد")
-}
-
  // تابعی برای افزایش شمارنده
 
 function startCount(element) {

@@ -191,20 +191,17 @@ input[type="number"]::-webkit-inner-spin-button {
 .all-table {
     width: 90%;
     height: fit-content;
-    font-size: 13px;
+    font-size: 11px;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
 .all-table tr th{
-    padding: 5px 10px;
     font-family: IranYekanX;
     font-weight: 300;
+    position: absolute;
 }
 
 .all-table tr td , .all-table tr th {
-    border: 1px solid #888888;
     text-align: center;
-    padding-right: 6px;
-    padding-left: 6px ;
 }

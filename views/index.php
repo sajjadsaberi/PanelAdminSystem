@@ -33,14 +33,13 @@ $run_query = $mysqli->query($query_add_user);
         $(function(){
             $("#panel-include").load("../includes/panel.php");
             $("#header-include").load("../includes/header.php");
-            $("#showalluser-include").load("../includes/showallusers.php");
         })
     </script>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/user-manager.css">
     <link rel="stylesheet" href="./font-awesome/font-awesome.css">
     <link rel="stylesheet" href="../node_modules/persian-datepicker/dist/css/persian-datepicker.min.css">
-    <link rel="stylesheet" href="./scripts/DataTables/datatables.min.css" />
+    <link rel="stylesheet" href="./scripts/jquery.dataTables.css">
     <title>سامانه اتوماسیون سرای مهر</title>
 </head>
 <body>
@@ -57,7 +56,29 @@ $run_query = $mysqli->query($query_add_user);
 
     <!-- Header -->
 
-<div id="header-include"></div>
+    <header>
+    <section class="head-menu">
+        <i class="fa fa-bars" onclick="menubtn()"></i>
+    </section>
+    <section class="head-text">
+    <div id="randomText" onload="displayRandomText()"></div>
+    </section>
+    <section class="head-items">
+        <a href="#"><i class="fa fa-arrow-right"></i></a>
+        <a href="#" id="notification-button"><i class="fa fa-envelope"></i></a>
+        <div id="notification-menu" class="hidden">
+    <ul>
+        <li><a href="#">گزینه 1</a></li>
+        <li><a href="#">گزینه 2</a></li>
+        <li><a href="#">گزینه 3</a></li>
+        <li><a href="#">گزینه 4</a></li>
+    </ul>
+</div>
+        <span class="head-prof">
+            <img src="./images/aks.png" alt="Profile">
+        </span>
+    </section>
+</header>
 
     <!-- End Header -->
 
@@ -142,24 +163,10 @@ $run_query = $mysqli->query($query_add_user);
     <!-- Tables -->
 <div class="activity-box tables">
 
-<form id="filters">
-
-<select name="filter" class="filter-menu">
-    <option class="filter-item" value="number" selected>براساس شماره ردیف</option>
-    <option class="filter-item" value="today">امروز</option>
-    <option class="filter-item" value="week">هفته گذشته</option>
-    <option class="filter-item" value="month">ماه گذشته</option>
-    <option class="filter-item" value="years">سال گذشته</option>
-</select>
-
-<input type="submit" value="اعمال فیلتر">
-
-</form>
-
 <div class="table">
 
-<table id="data-table">
-
+<table id="data-table" class="display" data-order='[[ 1, "asc" ]]' data-page-length='10'>
+<thead>
     <tr>
         <th>ردیف</th>
         <th>نام و نام خانوادگی</th>
@@ -168,10 +175,13 @@ $run_query = $mysqli->query($query_add_user);
         <th>تاریخ ترخیص</th>
         <th>مسـًول پذیرش</th>
     </tr>
+</thead>
 
+    
     <?php
     if ($run_query->num_rows > 0) {
-            for ($i = 0 ; $i <= $run_query->num_rows ; $i++) {
+        
+            for ($i = 1 ; $i <= $run_query->num_rows ; $i++) {
                 $row = $run_query->fetch_assoc();
                 echo "<tr>";
                 echo "<td>" . $row["id"] . "</td>";
@@ -188,6 +198,7 @@ $run_query = $mysqli->query($query_add_user);
             echo "</tr>";
         }
 ?>
+
 </table>
 
 </div>
@@ -201,11 +212,13 @@ $run_query = $mysqli->query($query_add_user);
 <ul>
 <?php
     if ($run_query->num_rows > 0) {
+        for ($i = 0 ; $i < $run_query->num_rows ; $i++) {
+            $row = $run_query->fetch_assoc();
                     echo "<li>";
                     echo $_SESSION["news"];
                     echo " در سامانه ثبت شد ";
                     echo "</li>";
-        } else {
+    }  } else {
             echo "<tr>";
             echo "<td>اطلاعاتی وجود ندارد</td>";
             echo "</tr>";
@@ -265,7 +278,7 @@ $run_query = $mysqli->query($query_add_user);
         <td><input required type="number" name="shsh" placeholder="شماره شناسنامه"></td>
         <td><input required type="text" name="loc" placeholder="محل صدور شناسنامه"></td>
         <td>
-            <select name="eduction" id="education" style="width: 85%;">
+            <select name="education" id="education" style="width: 85%;">
                 <option value="null" selected disabled>تحصیلات</option>
                 <option value="بی سواد">بی سواد</option>
                 <option value="زیردیپلم">زیر دیپلم</option>
@@ -320,7 +333,7 @@ $run_query = $mysqli->query($query_add_user);
         <td><input name="police" required type="text" placeholder="نام تحویل دهنده"></td>
     </tr>
     <tr>
-        <td><input onclick="createrow()" name="submit" type="submit" value="افزودن مدد جو"></td>
+        <td><input name="submit" type="submit" value="افزودن مدد جو"></td>
         <td><button type="reset">پاک کردن فرم</button></td>
     </tr>
 </table>
@@ -331,14 +344,65 @@ $run_query = $mysqli->query($query_add_user);
 
 <?php }elseif($_SESSION["permission"] == "showallusers"){ ?>
 
-    <div id="toolsbar">
-        <input type="text" placeholder="حذف مددجو">
-        <input type="text" placeholder="جستجو">
-        <a href="../PHP/router/user-manager/add-user.php"><i class="fa fa-plus"></i> افزودن مددجو</a>
-    </div>
 
 <!-- Table Users -->
-    <div id="showalluser-include"></div>
+<table class="all-table display" data-order='[[ 1, "asc" ]]' data-page-length='25'  id="alluser-table">
+    <thead>
+<tr>
+    <th>ردیف</th>
+    <th>نام و نام خانوادگی</th>
+    <th>نام پدر</th>
+    <th>جنسیت</th>
+    <th>تاریخ تولد</th>
+    <th>شماره شناسنامه</th>
+    <th>محل صدور</th>
+    <th>کد ملی</th>
+    <th>تحصیلات</th>
+    <th>شغل</th>
+    <th>تاهل</th>
+    <th>دین</th>
+    <!-- <th>مذهب</th> -->
+    <th>آدرس</th>
+    <th>تاریخ ورود</th>
+    <th>تاریخ ترخیص</th>
+    <!-- <th>پذیرش قبلی</th> -->
+    <th>نام مسـًول</th>
+    <!-- <th>نام تحویل دهنده</th> -->
+</tr>
+</thead>
+<?php
+    if ($run_query->num_rows > 0) {
+            for ($i = 1 ; $i <= $run_query->num_rows ; $i++) {
+                $row = $run_query->fetch_assoc();
+                echo "<tr>";
+                echo "<td>" . $row["id"] . "</td>";
+                echo "<td>" . $row["name"] . "</td>";
+                echo "<td>" . $row["fathername"] . "</td>";
+                echo "<td>" . $row["gender"] . "</td>";
+                echo "<td>" . $row["birth"] . "</td>";
+                echo "<td>" . $row["shsh"] . "</td>";
+                echo "<td>" . $row["loc"] . "</td>";
+                echo "<td>" . $row["codemeli"] . "</td>";
+                echo "<td>" . $row["eduction"] . "</td>";
+                echo "<td>" . $row["job"] . "</td>";
+                echo "<td>" . $row["taahol"] . "</td>";
+                echo "<td>" . $row["din"] . "</td>";
+                // echo "<td>" . $row["mazhab"] . "</td>";
+                echo "<td>" . $row["address"] . "</td>";
+                echo "<td>" . $row["logdate"] . "</td>";
+                echo "<td>" . $row["outdate"] . "</td>";
+                // echo "<td>" . $row["dublelog"] . "</td>";
+                echo "<td>" . $row["adminname"] . "</td>";
+                // echo "<td>" . $row["policename"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr>";
+            echo "<td colspan='19'>اطلاعاتی وجود ندارد</td>";
+            echo "</tr>";
+        }
+?>
+</table>
 
 
     <?php }else{header("Location:../PHP/router/dashboard.php");} ?>
@@ -360,6 +424,27 @@ $run_query = $mysqli->query($query_add_user);
 <script src="../node_modules/persian-date/dist/persian-date.min.js"></script>
 <script src="./scripts/app.js"></script>
 <script src="./scripts/table.js"></script>
-<script src="./scripts/DataTables/datatables.min.js"></script>
+<script src="./scripts/jquery.dataTables.js"></script>
+<script>
+$(document).ready(function() {
+    
+    $('#alluser-table').DataTable({
+        searching: true,
+        lengthMenu: [10, 25, 50, 100], // نمایش تعداد نتایج جستجو
+        search: {
+            regex: true // استفاده از جستجوی دقیق
+        },
+    });
+
+    $('#data-table').DataTable({
+        searching: true,
+        lengthMenu: [10, 25, 50, 100], // نمایش تعداد نتایج جستجو
+        search: {
+            regex: true // استفاده از جستجوی دقیق
+        },
+});
+
+});
+</script>
 <!-- <script src="./scripts/bootstrap/bootstrap.min.js.map"></script> -->
 </html>
