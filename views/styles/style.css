@@ -507,6 +507,7 @@ overflow: hidden;
     transition: all .2s;
     line-break: anywhere;
     font-size: 14px;
+    cursor: pointer;
 }
 
 .news ul li:hover{
