@@ -725,15 +725,15 @@ footer a {
 
 .iconsss {
     width: 250px;
-    height: 56px;
-    background-color: #fff;
+    height: 50px;
+    background-color: var(--whiteColor);
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius: 0 10px 10px 0;
     margin-top: 180px;
     transition: 0.5s;
-    margin-left: -1218px;
+    margin-left: -1255px;
     position: fixed;
     cursor: pointer;
     z-index: 9999;
@@ -746,9 +746,9 @@ footer a {
   }
   
   #settingsss {
-    background: #7173ff;
-    padding: 4px 8px 4px 10px;
+    background: var(--filterInputColor);
+    padding: 9px 6px 9px 7px;
     border-radius: 0px 10px 10px 0;
-    color: #fff;
+    color: var(--whiteColor);
     cursor: pointer;
   }

@@ -405,7 +405,7 @@ $run_query = $mysqli->query($query_add_user);
 
     <?php }else{header("Location:../PHP/router/dashboard.php");} ?>
     <div class="iconsss">
-    <i id="settingsss" class="fa fa-cog fa-3x" aria-hidden="true"></i>
+    <i id="settingsss" class="fa fa-cog fa-2x" aria-hidden="true"></i>
             <ul>
                 <li>قرمز</li>
                 <li>زرد</li>

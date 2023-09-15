@@ -19,6 +19,7 @@ $run_query = $mysqli->query($query_add_user);
 // End PHP Code
 ?>
 <section id="panel">
+
     <ul id="panel-items">
     <li class="logo">
         
