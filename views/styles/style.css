@@ -722,3 +722,33 @@ footer a {
     color:#ffe408;
     cursor: pointer;
 }
+
+.iconsss {
+    width: 250px;
+    height: 56px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0 10px 10px 0;
+    margin-top: 180px;
+    transition: 0.5s;
+    margin-left: -1218px;
+    position: fixed;
+    cursor: pointer;
+    z-index: 9999;
+  }
+  
+  .iconsss:hover {
+      transition: 0.5s;
+      margin-left: -840px;
+      cursor: pointer;
+  }
+  
+  #settingsss {
+    background: #7173ff;
+    padding: 4px 8px 4px 10px;
+    border-radius: 0px 10px 10px 0;
+    color: #fff;
+    cursor: pointer;
+  }

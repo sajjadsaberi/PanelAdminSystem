@@ -43,9 +43,7 @@ $run_query = $mysqli->query($query_add_user);
     <title>سامانه اتوماسیون سرای مهر</title>
 </head>
 <body>
-    
 <div id="container">
-
 <!-- Panel -->
 
 <div id="panel-include"></div>
@@ -406,11 +404,22 @@ $run_query = $mysqli->query($query_add_user);
 
 
     <?php }else{header("Location:../PHP/router/dashboard.php");} ?>
+    <div class="iconsss">
+    <i id="settingsss" class="fa fa-cog fa-3x" aria-hidden="true"></i>
+            <ul>
+                <li>قرمز</li>
+                <li>زرد</li>
+            </ul>
+            <ul>
+                <li>سبز</li>
+                <li>آبی</li>
+            </ul>
+            
+        </div>
     </div>
 
 
     <!-- End Content -->
-
 
 </section>
 
