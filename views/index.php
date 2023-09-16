@@ -66,10 +66,10 @@ $run_query = $mysqli->query($query_add_user);
         <a href="#" id="notification-button"><i class="fa fa-envelope"></i></a>
         <div id="notification-menu" class="hidden">
     <ul>
-        <li><a href="#">گزینه 1</a></li>
-        <li><a href="#">گزینه 2</a></li>
-        <li><a href="#">گزینه 3</a></li>
-        <li><a href="#">گزینه 4</a></li>
+        <li><a href="#">اعلان شماره 1</a></li>
+        <li><a href="#">اعلان شماره 2</a></li>
+        <li><a href="#">اعلان شماره 3</a></li>
+        <li><a href="#">اعلات شماره 4</a></li>
     </ul>
 </div>
         <span class="head-prof">

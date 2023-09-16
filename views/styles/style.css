@@ -187,18 +187,27 @@ padding: 15px 15px 15px 10px;
     padding: 0;
     position: fixed;
     background: var(--whiteColor);
-    border: 1px solid var(--tdTableColor)
+    border: 1px solid var(--tdTableColor) ;
+    width: 128px;
+    margin-right: -10px;
+    margin-top: 5px;
 }
 
 #notification-menu li {
-    margin-bottom: 10px;
     border-top: 1px solid var(--tdTableColor);
-    padding: 8px 20px 4px 20px;
+    padding: 10px 25px 10px 20px;
+    transition: 0.4s;
 }
 
 #notification-menu a {
     text-decoration: none;
     color: var(--iconBoxcolor);
+    font-size: 14px;
+}
+
+#notification-menu li:hover {
+    transition: 0.4s;
+    box-shadow: 0px 2px 0px #646464;
 }
 
 /* Content */
