@@ -70,6 +70,8 @@ $run_query = $mysqli->query($query_add_user);
         <li><a href="#">اعلان شماره 2</a></li>
         <li><a href="#">اعلان شماره 3</a></li>
         <li><a href="#">اعلات شماره 4</a></li>
+        <li><a href="#">اعلان شماره 3</a></li>
+        <li><a href="#">اعلات شماره 5</a></li>
     </ul>
 </div>
         <span class="head-prof">
