@@ -59,6 +59,7 @@ $run_query = $mysqli->query($query_add_user);
         <i class="fa fa-bars" onclick="menubtn()"></i>
     </section>
     <section class="head-text">
+    <i class="fa fa-quote-right" aria-hidden="true"></i>
     <div id="randomText" onload="displayRandomText()"></div>
     </section>
     <section class="head-items">
