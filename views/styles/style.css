@@ -342,11 +342,13 @@ z-index: 999;
     top: 12px;
 }
 
-.title-box h4 {
+.title-box a {
     position: absolute;
     right: 38px;
     top: 10px;
     color: var(--iconBoxcolor);
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .title-box .path {
@@ -647,14 +649,14 @@ background: var(--filterInputColor);
 #data-table td{
     border: 1px solid var(--tdTableColor);
     padding: 10px;
-    font-size: 11px;
+    font-size: 10px;
     text-align: center;
     transition: all .2s;
 }
 
 #data-table td:hover {
     cursor: pointer;
-    box-shadow: inset 0px 0px 10px #92929286;
+    box-shadow: inset 0px 0px 10px #bbbbbb86;
 }
 
 #data-table th{

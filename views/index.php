@@ -89,7 +89,7 @@ $run_query = $mysqli->query($query_add_user);
 
 <div class="title-box">
     <div class="icon-box"><i class="fa fa-home"></i></div>
-    <h4>صفحه اصلی</h4>
+    <a href="http://localhost/Panel" target="_self">صفحه اصلی</a>
     <div class="icon-box2"><i class="fa fa-chevron-left" aria-hidden="true"></i>
     <h4 class="path"><?php echo $_SESSION["path"]; ?></h4>
     </div>
