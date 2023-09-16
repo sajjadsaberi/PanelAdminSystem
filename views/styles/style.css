@@ -429,6 +429,15 @@ z-index: 999;
     margin-top: 45%;
     font-size: 40px;
     margin-left: 18px;
+    transition: 0.5s;
+}
+
+#info .info-box .icon svg:hover {
+    margin-top: 10%;
+    font-size: 60px;
+    margin-left: 5px;
+    transition: 0.5s;
+    opacity: 0.2;
 }
 
 #info .info-box .info {
@@ -446,14 +455,14 @@ z-index: 999;
 #info .info-box span {
     margin-top: 37% !important;
 }
-#info .info-box:hover {
+/* #info .info-box:hover {
     transform: 
         perspective(1000px)
         rotateX(20deg) 
         translateY(-20px);
         cursor: pointer;
     background: linear-gradient(to top , #ffffff00 , var(--ContentBoxColor));
-}
+} */
 
 #info .box-users .icon , #info .box-users .info,
 #info .box-coin .icon , #info .box-coin .info,

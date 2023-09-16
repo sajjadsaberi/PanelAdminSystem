@@ -126,7 +126,7 @@ $run_query = $mysqli->query($query_add_user);
     </div>
     <div class="info-box box-sign" style="background-color: #00a65a;color: #FFF;">
     <div class="info">
-        <span class="about">تعداد ترخیص شده ها</span>
+        <span class="about">تعداد ترخیص ها</span>
         <span class="number" data-count="1127">0</span>
     </div>
     <div class="icon"><i class="fa fa-sign-in"></i></div>
