@@ -340,6 +340,7 @@ z-index: 999;
     position: absolute;
     right: 130px;
     top: 12px;
+    color: var(--iconBoxcolor);
 }
 
 .title-box a {
