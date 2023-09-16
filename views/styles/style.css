@@ -389,15 +389,16 @@ z-index: 999;
     right: 130px;
     top: 12px;
     color: var(--iconBoxcolor);
+    opacity: 0.8;
 }
 
 .title-box a {
     position: absolute;
-    right: 38px;
+    right: 40px;
     top: 10px;
     color: var(--iconBoxcolor);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 200;
 }
 
 .title-box .path {
@@ -405,7 +406,8 @@ z-index: 999;
     width: 400px;
     right: 20px;
     top: -2px;
-    color: var(--iconBoxcolor);
+    color: var(--blackColor) ;
+    font-weight: 200;
 }
 
 
@@ -812,3 +814,4 @@ footer a {
     color: var(--whiteColor);
     cursor: pointer;
   }
+  
