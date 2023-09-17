@@ -4,6 +4,15 @@ const Panel = document.querySelector("#panel");
 const dataTable = document.querySelector("#data-table");
 const crtBtn = document.getElementsByName("submit");
 
+
+
+//Loader
+// setTimeout(hide, 3000);
+        
+// function hide(){
+//     document.getElementById('preloader-container').style.display = "none";
+// }
+
 // Open & Close Menu
 
 function menubtn () {

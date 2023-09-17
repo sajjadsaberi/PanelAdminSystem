@@ -48,7 +48,7 @@ $run_query = $mysqli->query($query_add_user);
         <a href="#"><i class="fa fa-message" class="a-in-li"></i>گزارش گیری</a>
     </li>
     <li>
-        <a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>افزودن مدیر</a>
+        <a href="../PHP/router/addadmin.php"><i class="fa fa-user-plus" aria-hidden="true"></i>افزودن مدیر</a>
     </li>
     <li>
         <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i>تنظیمات قالب</a>

@@ -33,7 +33,7 @@ $loweruser = strtolower($user);
 
             // Get Permission
             $permission_query = "
-            select id from manager where username='$user';
+            select permission from manager where username='$user';
             ";
 
             // Get Fullname
@@ -68,7 +68,6 @@ $loweruser = strtolower($user);
 
         }else{
             echo "Username Or Password In not Valid !";
-            echo $assoc["username"];
         }
     }
             }

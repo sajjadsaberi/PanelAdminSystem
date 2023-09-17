@@ -46,6 +46,29 @@ $run_query = $mysqli->query($query_add_user);
 <div id="container">
 <!-- Panel -->
 
+<!-- Loading -->
+<!-- <div class="loader loader--style7" title="6" id="preloader-container">
+  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+    <rect x="0" y="0" width="4" height="20" fill="#333">
+      <animate attributeName="opacity" attributeType="XML"
+        values="1; .2; 1" 
+        begin="0s" dur="0.6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="7" y="0" width="4" height="20" fill="#333">
+      <animate attributeName="opacity" attributeType="XML"
+        values="1; .2; 1" 
+        begin="0.2s" dur="0.6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="14" y="0" width="4" height="20" fill="#333">
+      <animate attributeName="opacity" attributeType="XML"
+        values="1; .2; 1" 
+        begin="0.4s" dur="0.6s" repeatCount="indefinite" />
+    </rect>
+  </svg>
+</div> -->
+
+
 <div id="panel-include"></div>
 
 <!-- Content Page -->
@@ -406,20 +429,53 @@ $run_query = $mysqli->query($query_add_user);
 </table>
 
 
+    <?php }elseif($_SESSION["permission"] == "addadmin"){ ?>
+
+
+
+
+        <form action="../PHP/addadmin.php" id="add-user-form" method="post">
+
+<table>
+    <tr>
+        <td><input required name="username" type="text" placeholder="نام کاربری"></td>
+        <td><input required name="password" type="text" placeholder="کلمه عبور"></td>
+    </tr>
+    <tr>
+        <td>
+<input required name="fullname" type="text" placeholder="نام و نام خانوادگی">
+        </td>
+        <td>
+<input required name="basename" type="text" placeholder="نام مجموعه">
+        </td>
+        <tr>
+        <td>
+        <select name="roll" id="gender">
+            <option value="null" disabled selected>نقش</option>
+            <option value="full">مدیر کل</option>
+            <option value="manager">مدیر مجموعه</option>
+            <option value="writer">منشی</option>
+        </select>
+        </td>
+        <td>
+        <input required name="databasename" type="text" placeholder="نام مجموعه در دیتابیس (فقط انگلیسی)">
+        </td>
+    </tr>
+    <tr>
+        <td><input name="submit" type="submit" value="افزودن مدد جو"></td>
+        <td><button type="reset">پاک کردن فرم</button></td>
+    </tr>
+
+</table>
+
+    </form>
+
+
+
+
+
     <?php }else{header("Location:../PHP/router/dashboard.php");} ?>
-    <div class="iconsss">
-    <i id="settingsss" class="fa fa-cog fa-2x" aria-hidden="true"></i>
-            <ul>
-                <li>قرمز</li>
-                <li>زرد</li>
-            </ul>
-            <ul>
-                <li>سبز</li>
-                <li>آبی</li>
-            </ul>
-            
-        </div>
-    </div>
+
 
 
     <!-- End Content -->
