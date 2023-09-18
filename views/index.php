@@ -454,7 +454,7 @@ $run_query = $mysqli->query($query_add_user);
             <option value="null" disabled selected>نقش</option>
             <option value="full">مدیر کل</option>
             <option value="manager">مدیر مجموعه</option>
-            <option value="writer">منشی</option>
+            <option value="writer">کاربر سیستم</option>
         </select>
         </td>
         <td>
@@ -462,7 +462,7 @@ $run_query = $mysqli->query($query_add_user);
         </td>
     </tr>
     <tr>
-        <td><input name="submit" type="submit" value="افزودن مدد جو"></td>
+        <td><input name="submit" type="submit" value="افزودن مدیر مجموعه"></td>
         <td><button type="reset">پاک کردن فرم</button></td>
     </tr>
 
