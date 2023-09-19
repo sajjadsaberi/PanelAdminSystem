@@ -35,23 +35,24 @@ $run_query = $mysqli->query($query_add_user);
         <a href="../PHP/router/dashboard.php" class="a-in-li"><i class="fa fa-home"></i> داشبورد </a>
     </li>
     <li>
-        <a href="#"><i class="fa fa-users" class="a-in-li"></i> مدیریت کاربران </a>
+        <a href="#"><i class="fa fa-users" class="a-in-li"></i> مدیریت کاربران <i class="fa fa-plus pluss" aria-hidden="true"></i></a>
+
     </li>
     <li id="users-manager">
-        <a href="#users-manager" class="a-in-li"><i class="fa-duotone fa-user"></i> مدیریت مدد جویان </a>
+        <a href="#users-manager" class="a-in-li"><i class="fa-duotone fa-user"></i> مدیریت مدد جویان <i class="fa fa-plus pluss" aria-hidden="true"></i></a>
         <div class="sub-menu">
                 <a href="../PHP/router/user-manager/add-user.php"><i class="fa fa-plus"></i> اضافه کردن کاربر </a>
                 <a href="../PHP/router/user-manager/show-all-users.php"><i class="fa fa-search"></i> نمایش همه کاربران </a>
             </div>
     </li>
     <li>
-        <a href="#"><i class="fa fa-message" class="a-in-li"></i>گزارش گیری</a>
+        <a href="#"><i class="fa fa-message" class="a-in-li"></i>گزارش گیری<i class="fa fa-plus pluss" aria-hidden="true"></i></a>
     </li>
     <li>
-        <a href="../PHP/router/addadmin.php"><i class="fa fa-user-plus" aria-hidden="true"></i>افزودن مدیر</a>
+        <a href="../PHP/router/addadmin.php"><i class="fa fa-user-plus" aria-hidden="true"></i>افزودن مدیر<i class="fa fa-plus pluss" aria-hidden="true"></i></a>
     </li>
     <li>
-        <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i>تنظیمات قالب</a>
+        <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i>تنظیمات قالب<i class="fa fa-plus pluss" aria-hidden="true"></i></a>
     </li>
     <li>
         <a href="../PHP/router/exit.php"><i class="fa fa-sign-out"></i> خروج از حساب </a>
