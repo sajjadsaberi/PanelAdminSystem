@@ -79,7 +79,7 @@ $run_query = $mysqli->query($query_add_user);
 
     <header>
     <section class="head-menu">
-        <i class="fa fa-bars" onclick="menubtn()"></i>
+    <i class="fa fa-align-right" aria-hidden="true" onclick="menubtn()"></i>
     </section>
     <section class="head-text">
     <i class="fa fa-quote-right" aria-hidden="true"></i>
