@@ -139,6 +139,19 @@ input[type="number"]::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
+#add-user-form button svg {
+  margin-right: -25px;
+  margin-top: 1px;
+  position: absolute;
+  transition: all .2s;
+  z-index: 999999;
+}
+
+#add-user-form button svg:hover {
+
+    transition: all .2s;
+  }
+
 #widget {
     width: 30%;
     padding: 0px 10px 6px 10px;

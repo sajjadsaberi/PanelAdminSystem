@@ -481,7 +481,8 @@ $run_query = $mysqli->query($query_add_user);
     </tr>
     <tr>
         <td><input name="submit" type="submit" value="افزودن مدیر مجموعه"></td>
-        <td><button type="reset">پاک کردن فرم</button></td>
+        <td><button type="reset"><i class="fa fa-trash" aria-hidden="true"></i>
+پاک کردن فرم</button></td>
     </tr>
 
 </table>
