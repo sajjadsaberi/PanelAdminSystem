@@ -18,6 +18,7 @@ $run_query = $mysqli->query($query_add_user);
 
 // End PHP Code
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,8 +32,7 @@ $run_query = $mysqli->query($query_add_user);
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script>
         $(function(){
-            $("#panel-include").load("../includes/panel.php");
-            $("#header-include").load("../includes/header.php");
+       
         })
     </script>
     <link rel="stylesheet" href="./styles/style.css">
@@ -46,30 +46,48 @@ $run_query = $mysqli->query($query_add_user);
 <div id="container">
 <!-- Panel -->
 
-<!-- Loading -->
-<!-- <div class="loader loader--style7" title="6" id="preloader-container">
-  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-    <rect x="0" y="0" width="4" height="20" fill="#333">
-      <animate attributeName="opacity" attributeType="XML"
-        values="1; .2; 1" 
-        begin="0s" dur="0.6s" repeatCount="indefinite" />
-    </rect>
-    <rect x="7" y="0" width="4" height="20" fill="#333">
-      <animate attributeName="opacity" attributeType="XML"
-        values="1; .2; 1" 
-        begin="0.2s" dur="0.6s" repeatCount="indefinite" />
-    </rect>
-    <rect x="14" y="0" width="4" height="20" fill="#333">
-      <animate attributeName="opacity" attributeType="XML"
-        values="1; .2; 1" 
-        begin="0.4s" dur="0.6s" repeatCount="indefinite" />
-    </rect>
-  </svg>
-</div> -->
+<section id="panel">
 
+    <ul id="panel-items">
+    <li class="logo">
+        
+        <span>مرکز بازپروری سرای مهر</span>
+    </li>
+    <li class="profile">
+        <img src="./images/aks.png" alt="Profile">
+        <div class="online"><i class="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"></i></div>
+        <span><span><?php echo $_SESSION["admin-name"]; ?></span><span><?php if($_SESSION["admin-managment"] == "full") {echo "مدیر کل";}elseif($_SESSION["admin-managment"] == "manager"){echo "مدیر مجموعه";}else{echo "منشی";}  ?></span></span>
+    </li>
+    <li>
+        
+        <a href="../PHP/router/dashboard.php" class="a-in-li"><i class="fa fa-home"></i> داشبورد </a>
+    </li>
+    <li>
+        <a href="#"><i class="fa fa-users" class="a-in-li"></i> مدیریت کاربران <i class="fa fa-plus pluss" aria-hidden="true"></i></a>
 
-<div id="panel-include"></div>
+    </li>
+    <li id="users-manager">
+        <a href="#users-manager" class="a-in-li"><i class="fa-duotone fa-user"></i> مدیریت مدد جویان <i class="fa fa-plus pluss" aria-hidden="true"></i></a>
+        <div class="sub-menu">
+                <a href="../PHP/router/user-manager/add-user.php"><i class="fa fa-plus"></i> اضافه کردن کاربر </a>
+                <a href="../PHP/router/user-manager/show-all-users.php"><i class="fa fa-search"></i> نمایش همه کاربران </a>
+            </div>
+    </li>
+    <li>
+        <a href="#"><i class="fa fa-message" class="a-in-li"></i>گزارش گیری<i class="fa fa-plus pluss" aria-hidden="true"></i></a>
+    </li>
+    <li>
+        <a href="../PHP/router/addadmin.php"><i class="fa fa-user-plus" aria-hidden="true"></i>افزودن مدیر<i class="fa fa-plus pluss" aria-hidden="true"></i></a>
+    </li>
+    <li>
+        <a href="#"><i class="fa fa-cogs" aria-hidden="true"></i>تنظیمات قالب<i class="fa fa-plus pluss" aria-hidden="true"></i></a>
+    </li>
+    <li>
+        <a href="../PHP/router/exit.php"><i class="fa fa-sign-out"></i> خروج از حساب </a>
+    </li>
+    </ul>
+
+</section>
 
 <!-- Content Page -->
 
@@ -79,7 +97,7 @@ $run_query = $mysqli->query($query_add_user);
 
     <header>
     <section class="head-menu">
-    <i class="fa fa-align-right" aria-hidden="true" onclick="menubtn()"></i>
+    <button><i class="fa fa-align-right" aria-hidden="true"></i></button>
     </section>
     <section class="head-text">
     <i class="fa fa-quote-right" aria-hidden="true"></i>
@@ -115,7 +133,7 @@ $run_query = $mysqli->query($query_add_user);
 
 <div class="title-box">
     <div class="icon-box"><i class="fa fa-home"></i></div>
-    <a href="http://localhost/Panel/views/index.php#" target="_self">صفحه اصلی</a>
+    <a href="#" target="_self">صفحه اصلی</a>
     <div class="icon-box2"><i class="fa fa-chevron-left" aria-hidden="true"></i>
     <h4 class="path"><?php echo $_SESSION["path"]; ?></h4>
     </div>
@@ -514,5 +532,4 @@ $(document).ready(function() {
 
 });
 </script>
-<!-- <script src="./scripts/bootstrap/bootstrap.min.js.map"></script> -->
 </html>

@@ -1,26 +1,14 @@
-const MenuBtn = document.querySelector("#menu-btn");
 const ContentBox = document.querySelector("#content-box");
 const Panel = document.querySelector("#panel");
+const MenuOpen = document.querySelector("#menu-btn-open");
 const dataTable = document.querySelector("#data-table");
 const crtBtn = document.getElementsByName("submit");
 
-
-
-//Loader
-// setTimeout(hide, 3000);
-        
-// function hide(){
-//     document.getElementById('preloader-container').style.display = "none";
-// }
-
 // Open & Close Menu
 
-function menubtn () {
-
-Panel.classList.toggle("hide");
-ContentBox.classList.toggle("longer");
-
-}
+MenuOpen.addEventListener("click" , () => {
+    alert("hello")
+})
 
  // تابعی برای افزایش شمارنده
 

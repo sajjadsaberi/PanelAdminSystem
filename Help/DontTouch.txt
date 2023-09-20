@@ -1,0 +1,22 @@
+ create table bahonar(
+    id int NOT NULL AUTO_INCREMENT,
+    name varchar(256) NOT NULL,
+    fathername varchar(256) NOT NULL,
+    gender varchar(100) NOT NULL,
+    birth varchar(256) NOT NULL,
+    shsh int NOT NULL,
+    loc varchar(256) NOT NULL,
+    codemeli varchar(256) NOT NULL,
+    eduction varchar(256) NOT NULL,
+    job varchar(256) NOT NULL,
+    taahol varchar(100) NOT NULL,
+    din varchar(100) NOT NULL,
+    mazhab varchar(100) NOT NULL,
+    address varchar(256) NOT NULL,
+    logdate varchar(256) NOT NULL,
+    outdate varchar(256) NOT NULL,
+    dublelog varchar(256) NOT NULL,
+    adminname varchar(256) NOT NULL,
+    policename varchar(256) NOT NULL,
+    PRIMARY KEY(id , shsh , codemeli)
+    );
