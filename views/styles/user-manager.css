@@ -107,6 +107,7 @@ input[type="number"]::-webkit-inner-spin-button {
     color: var(--whiteColor);
     border: 0;
     height: 45px;
+    padding: 3px 35px 4px 10px;
 }
 
 #add-user-form table td [type=submit]:hover{
@@ -137,6 +138,20 @@ input[type="number"]::-webkit-inner-spin-button {
 #add-user-form table td button:hover {
     background: var(--tableBTNhover);
     cursor: pointer;
+}
+
+#add-user-form table #icn svg {
+    position: absolute;
+  color: #fff;
+  float: right;
+  margin-right: -150px;
+  margin-top: 14px;
+  transition: all .5s;
+}
+
+#add-user-form table #icn svg:hover {
+    transform: rotateX(360deg);
+    transition: all .5s;
 }
 
 #add-user-form button svg {
