@@ -6,9 +6,6 @@ const crtBtn = document.getElementsByName("submit");
 
 // Open & Close Menu
 
-MenuOpen.addEventListener("click" , () => {
-    alert("hello")
-})
 
  // تابعی برای افزایش شمارنده
 

