@@ -115,8 +115,8 @@ $run_query = $mysqli->query($query_add_user);
         <td><input name="police" required type="text" placeholder="نام تحویل دهنده"></td>
     </tr>
     <tr>
-        <td><input onclick="createrow()" name="submit" type="submit" value="افزودن مدد جو"></td>
-        <td><button type="reset">پاک کردن فرم</button></td>
+        <td id="icn2"><i class="fa fa-user-plus" aria-hidden="true"><input onclick="createrow()" name="submit" type="submit" value="افزودن مدد جو"></td>
+        <td><i class="fa fa-trash" aria-hidden="true"><button type="reset">پاک کردن فرم</button></td>
     </tr>
     </table>
 
