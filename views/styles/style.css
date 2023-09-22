@@ -186,7 +186,7 @@ padding: 15px 15px 15px 10px;
     align-items: center;
 }
 
-.online svg {
+.ons svg {
     width: 10px;
     height: 10px;
     color: #02a802;
@@ -194,11 +194,50 @@ padding: 15px 15px 15px 10px;
     position: absolute;
 }
 
-.online::after {
+.ons::after {
     content: "آنلاین";
     position: absolute;
     font-size: 12px;
     margin: 8px 35px 0px 0px;
+}
+
+.circles {
+    width: 8px;
+    height: 8px;
+    background-color: #4CAF50; /* رنگ دایره سبز */
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    margin-top: 11px;
+    margin-right: 20px;
+}
+
+.circles::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #4CAF50; /* رنگ حاشیه */
+    border-radius: 50%;
+    animation: pulse 1s ease-in-out infinite;
+    opacity: 50;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 1;
+    }
 }
 
 .profile img {

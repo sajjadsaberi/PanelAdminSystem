@@ -27,11 +27,10 @@ $run_query = $mysqli->query($query_add_user);
     </li>
     <li class="profile">
         <img src="./images/aks.png" alt="Profile">
-        <div class="online"><i class="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"></i></div>
+        <div class="ons"><span class="circles"></span></div>
         <span><span><?php echo $_SESSION["admin-name"]; ?></span><span><?php if($_SESSION["admin-managment"] == "full") {echo "مدیر کل";}elseif($_SESSION["admin-managment"] == "manager"){echo "مدیر مجموعه";}else{echo "منشی";}  ?></span></span>
     </li>
     <li>
-        
         <a href="../PHP/router/dashboard.php" class="a-in-li"><i class="fa fa-home"></i> داشبورد </a>
     </li>
     <li>
