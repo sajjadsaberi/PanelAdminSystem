@@ -156,12 +156,12 @@ transition: all .2s;
 
 #social svg {
     font-size: 39px;
-    color: var(--midNightColor);
+    color: var(--bgColor);
     transition: all .2s;
 }
 
 #social .socials-youtube svg:hover{
-    color: red;
+    color: #ff1b1b;
 }
 #social .socials-instagram svg:hover{
     color: #dd0b86;
