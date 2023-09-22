@@ -74,3 +74,14 @@ button.addEventListener('click', function() {
     }
 });
 
+// disable right click
+
+document.oncontextmenu = function(e) {
+    e.preventDefault(); // جلوگیری از نمایش منوی کلیک راست
+    alert("کلیک راست غیرفعال شده است."); // نمایش پیام اخطار
+};
+
+
+// document.oncontextmenu = function() {
+//     return false;
+// };

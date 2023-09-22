@@ -42,7 +42,7 @@ $run_query = $mysqli->query($query_add_user);
     <link rel="stylesheet" href="./scripts/jquery.dataTables.css">
     <title>سامانه اتوماسیون سرای مهر</title>
 </head>
-<body>
+<body oncontextmenu="return false;">
 <div id="container">
 <!-- Panel -->
 

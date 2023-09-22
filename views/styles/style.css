@@ -41,6 +41,12 @@
 }
 
 body {
+    -webkit-touch-callout: none; /* برای Safari */
+    -webkit-user-select: none; /* برای Safari */
+    -khtml-user-select: none; /* برای Konqueror HTML */
+    -moz-user-select: none; /* برای Firefox */
+    -ms-user-select: none; /* برای Internet Explorer/Edge */
+    user-select: none;
     direction: rtl;
 }
 
