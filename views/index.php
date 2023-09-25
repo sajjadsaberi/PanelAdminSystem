@@ -345,7 +345,6 @@ $run_query = $mysqli->query($query_add_user);
                 <option value="null" selected disabled>وضعیت تاهل</option>
                 <option value="متاهل">متاهل</option>
                 <option value="مجرد">مجرد</option>
-                <option value="مطلقه">مطلقه</option>
             </select>
         </td>
     </tr>
