@@ -4,9 +4,6 @@ const MenuOpen = document.querySelector("#menu-btn-open");
 const dataTable = document.querySelector("#data-table");
 const crtBtn = document.getElementsByName("submit");
 
-// Open & Close Menu
-
-
  // تابعی برای افزایش شمارنده
 
 function startCount(element) {
@@ -34,6 +31,7 @@ numberElements.forEach(function (element) {
 const texts = [
     "امام علی (ع) : برای انسان، زندگی گواراتر از عافیت و سلامتی نیست.",
     "امام جعفر صادق (ع) : عافیت و سلامتی به هیچ قیمتی قابل ارزیابی نیست.",
+     "امام جعفر صادق (ع) : عافیت و سلامتی به هیچ قیمتی قابل ارزیابی نیست.",
     "امام علی (ع) : در دنیا نعمتی بالاتر از طول عمر و سلامتی بدن وجود ندارد.",
     "امام هادی (ع) : آن که از خودش راضی شود ، ناراضیان از او فراوان می شوند.",
     "رسول اکرم (ص) : راستگویی باعث آرامش است و دروغگویی باعث دلهره و اضطراب."
