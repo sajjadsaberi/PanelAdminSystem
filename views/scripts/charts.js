@@ -56,7 +56,7 @@ var ctx1 = document.getElementById('myChart1').getContext('2d');
 var myChart1 = new Chart(ctx1, {
     type: 'bar',
     data: {
-        labels: ['1397', '1398', '1399', '1400', '1401', '1402'],
+        labels: ['1396','1397', '1398', '1399', '1400', '1401', '1402'],
         datasets: [{
             label: 'آمار ترخیص و بهبودی 10 سال اخیر  ',
             data: [241,575,654,755,947,1218],
